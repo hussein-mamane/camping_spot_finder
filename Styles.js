@@ -1,12 +1,7 @@
 import {StyleSheet} from 'react-native'
 export const styles = StyleSheet.create(
     {
-        container:{
-            flex:1,
-            flexDirection:'column',
-            justifyContent:'start',
-            alignItems:'start'
-        },
+        
         boxLoginPage: {
             flex: 1,
             flexDirection: 'column',
@@ -16,6 +11,7 @@ export const styles = StyleSheet.create(
             position: 'relative',
             width: '100%',
             height: '100%',
+            backgroundColor:'#fff'
             //top: 10,    // accumulable avec Keyboard Offset
             //bottom: 10           
         },
@@ -28,6 +24,14 @@ export const styles = StyleSheet.create(
             marginLeft : "5%",
             marginBottom : "2%"
         },
+        textForWelcome:{
+            fontFamily: 'sans-serif',
+            fontWeight:'bold',
+            fontSize:  30,
+            color:'#fea837',
+            marginBottom : "05%"
+        },
+
         boxForMap:{
             flex:2,
             flexDirection:'row',
@@ -47,14 +51,6 @@ export const styles = StyleSheet.create(
             marginLeft :20,
             marginRight :20
 
-        },
-        textWhiteBold:{
-            color:'white',
-            fontWeight:'bold'
-        },
-        textBlackBold:{
-            color:'#000',
-            fontWeight:'bold'
         },
         outlinedTextInputContainer: {
             position: 'relative',
@@ -98,7 +94,7 @@ export const styles = StyleSheet.create(
             fontSize: 18,
           },
         imageContainer: {
-            width: '30%', // Set the width to 80% of the parent
+            width: '60%', //reduction de la taille de l'image
             aspectRatio: 1, // Maintain aspect ratio (1:1 for square image)
             overflow: 'hidden',
           },

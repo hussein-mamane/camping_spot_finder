@@ -4,6 +4,7 @@ import {styles} from '../Styles'
 
 
 
+
 const ComponentTextInSignupLogin = ({children}) => {
         
     return (

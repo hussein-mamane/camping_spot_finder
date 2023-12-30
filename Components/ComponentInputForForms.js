@@ -3,7 +3,7 @@ import {View,TextInput} from 'react-native'
 import {styles} from '../Styles'
 
 
-const ComponentInputForForms =()=>
+const ComponentInputForForms =({ label, onChangeTextCallback })=>
 {
 
   const [text, setText] = useState('');
@@ -19,8 +19,11 @@ const ComponentInputForForms =()=>
           styles.outlinedTextInput,
           isFocused && styles.outlinedTextInputFocused,
         ]}
-        placeholder="Type here..."
-        onChangeText={(inputText) => setText(inputText)}
+        placeholder={`Type your ${label} here...`}
+        onChangeText={(inputText) => {
+                       setText(inputText);//  local state
+                       onChangeTextCallback && onChangeTextCallback(inputText); // si callback,Notifier le parent pour faire le callback
+                    }}
         value={text}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
