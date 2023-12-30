@@ -12,6 +12,7 @@ export default function App(){
   //   </Stack.Navigator>
   //   </NavigationContainer>
   return (
-    //met ton code ici
+    //code ici
+
   );
 }
