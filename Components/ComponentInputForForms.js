@@ -2,6 +2,7 @@ import React, { useState }  from "react";
 import {View,TextInput} from 'react-native'
 import {styles} from '../Styles'
 
+
 const ComponentInputForForms =()=>
 {
 
