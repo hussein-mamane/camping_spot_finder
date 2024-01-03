@@ -31,7 +31,7 @@ export default function Inscription(){
     console.log('Last Name:', email);
     console.log('Username:', username);
     console.log('Password:', password);
-    try {
+    /*try {
       const response = await axios.post(`http://${rootAddress}:3000/signup`, {
         fullName,
         email,
@@ -42,8 +42,29 @@ export default function Inscription(){
       console.log('Registration successful:', response.data);
     } catch (error) {
       console.error('Registration failed:', error);
-    }
-  };
+    }*/
+        fetch("http://192.168.127.155:3000/signup", {
+      method: "POST",
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        "email": email,
+        "password": password,
+        "fullName": fullName,
+        "username": username,
+      }),
+    })
+      .then((res) => {
+        console.log('Registration successful:', res.json());
+      })
+      .catch((error) => {
+        console.error('Registration failed:', console.error(error));
+      });
+  }
+    
+
+  
   return(
   <ComponentBoxLoginPage>
       <Text style={styles.textForWelcome}>

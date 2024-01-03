@@ -25,14 +25,14 @@ const User = mongoose.model('User', userSchema);
 
 mongoose.connection.on('connected', () => {
   console.log('Connected to MongoDB')
-  app.listen(port, () => {
+  app.listen(port,"0.0.0.0", () => {
     console.log(`Server is running on port ${port}`);
   });
 });
 
 
 app.post('/signup', async (req, res) => {
-    const { fullName, email, username, password } = req.body;
+    //const { fullName, email, username, password } = req.body;
 
     try {
       const newUser = new User({ 
