@@ -1,4 +1,5 @@
-import { Text } from 'react-native';
+import { Text,TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import React,{useState} from 'react';
 import {styles} from '../../../Styles'
 
@@ -11,6 +12,7 @@ import { ComponentTextInSignupLogin} from'../../../Components/ComponentTextInSig
 
 export default function Inscription(){
 
+  const navigation = useNavigation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
@@ -36,6 +38,14 @@ export default function Inscription(){
     <ComponentImage source={require('../../../assets/img_camp.png')}></ComponentImage>
     
     <ComponentButton title="Join" onPress={handleConnectButtonClick}></ComponentButton>
+    {/* "I have no account" link */}
+    <TouchableOpacity onPress={() => navigation.navigate('Inscription')}>
+        <Text style={styles.linkButton}>
+          I have no account
+        </Text>
+    </TouchableOpacity>
+    {/* end link */}
+
 
   </ComponentBoxLoginPage>
   )

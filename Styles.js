@@ -31,7 +31,13 @@ export const styles = StyleSheet.create(
             color:'#fea837',
             marginBottom : "05%"
         },
-
+        linkButton:{
+            fontFamily: 'sans-serif',
+            fontWeight: 'bold',
+            fontSize: 18,
+            color: '#fea837',
+            marginTop: '4%'
+        },
         boxForMap:{
             flex:2,
             flexDirection:'row',
