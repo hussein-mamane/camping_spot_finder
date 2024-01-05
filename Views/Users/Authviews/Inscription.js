@@ -26,42 +26,41 @@ export default function Inscription(){
   const handlePasswordChange = (text) => setPassword(text);
 
   const handleConnectButtonClick = async () => {
-    
     console.log('First Name:', fullName);
     console.log('Last Name:', email);
     console.log('Username:', username);
     console.log('Password:', password);
-    /*try {
-      const response = await axios.post(`http://${rootAddress}:3000/signup`, {
-        fullName,
-        email,
-        username,
-        password,
-      });
-
-      console.log('Registration successful:', response.data);
-    } catch (error) {
-      console.error('Registration failed:', error);
-    }*/
-        fetch("http://192.168.127.155:3000/signup", {
-      method: "POST",
-      headers: {
-        'content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        "email": email,
-        "password": password,
-        "fullName": fullName,
-        "username": username,
-      }),
-    })
-      .then((res) => {
-        console.log('Registration successful:', res.json());
-      })
-      .catch((error) => {
-        console.error('Registration failed:', console.error(error));
-      });
-  }
+  
+    if (username !== "" && email !== "" && fullName !== "" && password !== "") {
+      try {
+        const response = await fetch(`http://${rootAddress}:3000/signup`, {
+          method: "POST",
+          headers: {
+            'content-type': 'application/json',
+          },
+          body: JSON.stringify({
+            "email": email,
+            "password": password,
+            "fullName": fullName,
+            "username": username,
+          }),
+        });
+  
+        if (response.ok) {
+          // Registration successful
+          const data = await response.json();
+          console.log('Registration successful:', data.message);
+        } else {
+          // Registration failed
+          const errorData = await response.json();
+          console.error('Registration failed:', response.status, errorData.error);
+        }
+      } catch (error) {
+        console.error('Error during registration:', error);
+      }
+    }
+  };
+  
     
 
   
