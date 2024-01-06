@@ -27,7 +27,8 @@ const ComponentInputForForms =({ label, onChangeTextCallback })=>
         value={text}
         onFocus={() => setIsFocused(true)}
         onBlur={() => setIsFocused(false)}
-        required
+
+        // secureTextEntry
       />
     </View>
   );

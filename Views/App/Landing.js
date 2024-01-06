@@ -8,7 +8,7 @@ import { ScrollView } from 'react-native-gesture-handler';
 export default function Landing(){
     return( <View style={styles.boxLoginPage}>
     <Text >
-        Hello Here We Are
+        YOU ARE IN LANDING PAGE
     </Text>
     </View>
     )
