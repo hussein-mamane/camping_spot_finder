@@ -112,7 +112,35 @@ export const styles = StyleSheet.create(
           },
           text: {
             // styles de text communs
-          }
+          },
+          navigateButton: {
+            backgroundColor: '#FF7657',
+            padding: 15,
+            alignItems: 'center',
+            borderRadius: 8,
+            margin: 20,
+          },
+          navigateButtonText: {
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize:18
+          },
+          mapButton:{
+            position: 'absolute',
+            top: 30,
+            left: 20,
+            padding: 10,
+            backgroundColor: '#FF7657',
+            borderRadius: 5,
+            },
+          mapButton2:{
+            position: 'absolute',
+            top: 80,
+            left: 20,
+            padding: 10,
+            backgroundColor: '#FF7657',
+            borderRadius: 5,
+              }
         
     }
 )
