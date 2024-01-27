@@ -11,6 +11,7 @@ import {
 } from "react-native";
 import {Ionicons} from '@expo/vector-icons';
 import * as Icon from "react-native-vector-icons";
+import { rootAddress } from '../../constants'
 
 const { width, height } = Dimensions.get('screen');
 
@@ -26,7 +27,7 @@ export default class Filterpage extends React.Component {
     option_all: true,
     option_rated: false,
   }
-  handleSubmit = () => {
+  handleSubmit = async() => {
     const {
       sort,
       type,
@@ -34,14 +35,58 @@ export default class Filterpage extends React.Component {
       option_all,
       option_rated,
     } = this.state;
-    
+    /*
     console.log('Sort By:', sort);
     console.log('Type:', type);
     console.log('Price:', price);
     console.log('Show All Spots:', option_all);
     console.log('Show Highly Rated Spots:', option_rated);
+*/
 
+    const sortOrder = sort === 'ratings' ? '0' : '1'
+    let camptype = '2'//all
+    if (type === "tenting") camptype = "0"
+    if (type === "rv") camptype = "1"
+    
+    console.log(JSON.stringify({
+      "all": option_all,
+      "highlyRated": option_rated,
+      "sortOrder":sortOrder,
+      "camptype":camptype
+    }))
+
+    try{
+      const response = await fetch(`http://${rootAddress}:3000/getcamps`,{
+      method: "POST",
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        "all": option_all,
+        "highlyRated": option_rated,
+        "sortOrder":sortOrder,
+        "camptype":camptype
+      }),
+    })
+
+
+   
+    if (response.ok) {
+      //  successful
+      const data = await response.json();
+      console.log('fetch successful:', data.message);
+      navigation.navigate('CampgroundMap')
+    } else {
+      //  failed
+      const errorData = await response.json();
+      console.error('fetch failed:', response.status, errorData.error);
+    }
   }
+  catch (error) {
+  console.error('Error during fetch:', error);
+  }
+
+}
   
   renderHeader() {
     return (

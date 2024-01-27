@@ -4,35 +4,8 @@ import MapView, { Marker } from 'react-native-maps';
 // import { gmapkey } from './constants';
 import { Text,View,TouchableOpacity } from 'react-native';
 import { styles} from '../../Styles';
+import { rootAddress } from '../../constants'
 
-
-
-
-function haversineDistance(lat1, lon1, lat2, lon2) {
-    // Convert latitude and longitude from degrees to radians
-    const toRadians = (angle) => (angle * Math.PI) / 180;
-    lat1 = toRadians(lat1);
-    lon1 = toRadians(lon1);
-    lat2 = toRadians(lat2);
-    lon2 = toRadians(lon2);
-
-    const dlat = lat2 - lat1;
-    const dlon = lon2 - lon1;
-    const a =
-      Math.sin(dlat / 2) ** 2 +
-      Math.cos(lat1) * Math.cos(lat2) * Math.sin(dlon / 2) ** 2;
-    const c = 2 * Math.asin(Math.sqrt(a));
-  
-    // Earth's radius in meters (mean value)
-    const radiusOfEarth = 6371000;
-    //distance
-    const distance = radiusOfEarth * c;
-    return distance;
-  }
-//   const distance = haversineDistance(lat1, lon1, lat2, lon2);
-  
-
-  
 export default function CampgroundMap() {
   const [campgrounds, setCampgrounds] = useState([
     {
