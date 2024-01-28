@@ -4,30 +4,16 @@ import MapView, { Marker } from 'react-native-maps';
 // import { gmapkey } from './constants';
 import { Text,View,TouchableOpacity } from 'react-native';
 import { styles} from '../../Styles';
+import { useNavigation, useRoute } from '@react-navigation/native'
 import { rootAddress } from '../../constants'
 
-export default function CampgroundMap() {
-  const [campgrounds, setCampgrounds] = useState([
-    {
-        id:1,
-        lat:33.7095925,
-        lng:-7.3680013,
-        name:"cnss camping" ,
-        description:"celui de la cnss",
-    },
-    {
-        id:2,
-        lat:33.7095907,
-        lng:-7.3860259,
-        name:"mimosa camping" ,
-        description:"camping mimosa",
-    }
-  ]);
+export default function CampgroundMap({route}) {
 
-  useEffect(() => {
-    // Fetch campground data using Google Maps API
-    // Update the campgrounds state with the data
-  }, []);
+  const { campgrounds } = route.params;
+
+  
+
+  
 
   const handleMarkerPress = (campground) => {
     // Handle marker press, show campground details
@@ -46,12 +32,13 @@ export default function CampgroundMap() {
             longitudeDelta: 0.0421,
         }}
         >
-        {campgrounds.map((campground) => (
+        {
+          campgrounds.map((campground) => (
             <Marker
-            key={campground.id}
-            coordinate={{ latitude: campground.lat, longitude: campground.lng }}
+            key={campground.place_id}
+            coordinate={{ latitude: campground.location.lat, longitude: campground.location.lng }}
             title={campground.name}
-            description={campground.description}
+            description={campground.distanceFromYou}
             onPress={() => handleMarkerPress(campground)}
             />
         ))}

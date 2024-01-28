@@ -74,7 +74,11 @@ app.post('/getcamps', async (req, res) => {
     if (all) {
     const campPlaces = await Camp.find();
     const rvParkPlaces = await Rvpark.find();
-    campingPlaces = campPlaces.concat(rvParkPlaces);
+    const combinedPlaces = campPlaces.concat(rvParkPlaces);
+    //remove Rv et campground at same time whih duplicates
+    campingPlaces = Array.from(new Set(combinedPlaces.map(place => place.place_id)))
+  .map(placeId => combinedPlaces.find(place => place.place_id === placeId));
+
     console.log("length all",campingPlaces.length)
     } else {
       if (camptype == '0') {
@@ -86,8 +90,11 @@ app.post('/getcamps', async (req, res) => {
       } else if (camptype == '2') {
         
           const campPlaces = await Camp.find();
-          const rvParkPlaces = await Rvpark.find();
-        campingPlaces = campPlaces.concat(rvParkPlaces);
+          const rvParkPlaces = await Rvpark.find(); const combinedPlaces = campPlaces.concat(rvParkPlaces);
+          //remove Rv et campground at same time which duplicates
+          campingPlaces = Array.from(new Set(combinedPlaces.map(place => place.place_id)))
+        .map(placeId => combinedPlaces.find(place => place.place_id === placeId));
+      
       }
     }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   ScrollView,
   StyleSheet,
@@ -15,10 +16,14 @@ import { rootAddress } from '../../constants'
 
 const { width, height } = Dimensions.get('screen');
 
+
 export default class Filterpage extends React.Component {
   static navigationOptions = {
     header: null,
   };
+
+
+  
 
   state = {
     sort: "distance",
@@ -41,7 +46,7 @@ export default class Filterpage extends React.Component {
     console.log('Price:', price);
     console.log('Show All Spots:', option_all);
     console.log('Show Highly Rated Spots:', option_rated);
-*/
+    */
 
     const sortOrder = sort === 'ratings' ? '0' : '1'
     let camptype = '2'//all
@@ -74,8 +79,10 @@ export default class Filterpage extends React.Component {
     if (response.ok) {
       //  successful
       const data = await response.json();
-      console.log('fetch successful:', data.message);
-      navigation.navigate('CampgroundMap')
+      console.log('fetch successful:', data);
+      const { navigation } = this.props;
+      // const sended = response.data
+      navigation.navigate('CampgroundMap',{"campgrounds":data})
     } else {
       //  failed
       const errorData = await response.json();
@@ -83,7 +90,7 @@ export default class Filterpage extends React.Component {
     }
   }
   catch (error) {
-  console.error('Error during fetch:', error);
+    console.error('Error during fetch:', error);
   }
 
 }
@@ -272,7 +279,7 @@ export default class Filterpage extends React.Component {
           {/* Submit Button */}
           <TouchableOpacity
             style={styles.submitButton}
-            onPress={this.handleSubmit}
+            onPress={()=>this.handleSubmit()}
           >
             <Text style={styles.submitButtonText}>Go</Text>
           </TouchableOpacity>
