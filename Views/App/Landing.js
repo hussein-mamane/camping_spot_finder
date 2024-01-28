@@ -9,37 +9,45 @@ export default function Landing(){
 
 
   const navigation = useNavigation();
-//   useEffect(
-//    async function()
-//             {
-//     try{
-//       const response = await fetch(`http://${rootAddress}:3000/getcamps`,{
-//       method: "POST",
-//       headers: {
-//         'content-type': 'application/json',
-//       },
-//       body: JSON.stringify({
-//         "all": option_all,
-//         "highlyRated": option_rated,
-//         "sortOrder":sortOrder,
-//         "camptype":camptype
-//       }),
-//     })   
-//     if (response.ok) {
-//       //  successful
-//       const data = await response.json();
-//       console.log('fetch successful:', data);
-//     } else {
-//       //  failed
-//       const errorData = await response.json();
-//       console.error('fetch failed:', response.status, errorData.error);
-//     }
-//   }
-//   catch (error) {
-//   console.error('Error during fetch:', error);
-//   }
-// }
-//   )
+  let campgrounds
+  useEffect(()=>{
+
+    const fetchDatas = async ()=>{
+      try{
+        const response = await fetch(`http://${rootAddress}:3000/getcamps`,{
+        method: "POST",
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          "all": true,
+          "highlyRated": false,
+          "sortOrder":'1',
+          "camptype":'2'
+        }),
+      })   
+      if (response.ok) {
+        //  successful
+        const data = await response.json();
+        console.log('fetch successful:', data);
+        campgrounds = data
+      } else {
+        //  failed
+        const errorData = await response.json();
+        console.error('fetch failed:', response.status, errorData.error);
+      }
+    }
+    catch (error) {
+    console.error('Error during fetch:', error);
+    }
+  }
+    fetchDatas()
+
+  },[])
+    
+  
+   
+
 
   return( 
     <View style={styles.boxLoginPage}>
@@ -53,7 +61,7 @@ export default function Landing(){
 
           <TouchableOpacity
             style={styles.navigateButton}
-            onPress={() => navigation.navigate('CampgroundMap')}
+            onPress={() => navigation.navigate('CampgroundMap',{"campgrounds":campgrounds})}
           >
             <Text style={styles.navigateButtonText}>Map</Text>
           </TouchableOpacity>
