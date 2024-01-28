@@ -11,7 +11,6 @@ function AppStack() {
       <appStack.Screen name="Landing" component={Landing} />
       <appStack.Screen name="Filterpage" component={Filterpage} />
       <appStack.Screen name="CampgroundMap" component={CampgroundMap} />
-
       <appStack.Screen name="SeeCamping" component={SeeCamping} />
     </appStack.Navigator>
   );

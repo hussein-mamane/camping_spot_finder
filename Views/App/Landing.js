@@ -1,9 +1,10 @@
-import { Text,TouchableOpacity,View } from 'react-native';
+import { Text,TouchableOpacity,View ,StyleSheet} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import React,{useEffect, useState} from 'react';
 import {styles} from '../../Styles'
 import {rootAddress} from '../../constants'
 import { ScrollView } from 'react-native-gesture-handler';
+import SeeCamping from './seeCamping';
 
 export default function Landing(){
 
@@ -57,6 +58,13 @@ export default function Landing(){
             onPress={() => navigation.navigate('Filterpage')}
           >
             <Text style={styles.navigateButtonText}>Filters</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.navigateButton}
+            onPress={() => navigation.navigate('SeeCamping')}
+          >
+            <Text style={styles.navigateButtonText}>See</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
