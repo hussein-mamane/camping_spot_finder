@@ -7,47 +7,36 @@ import { ScrollView } from 'react-native-gesture-handler';
 import SeeCamping from './seeCamping';
 import AddReviewPage from './addReview';
 import * as Location from 'expo-location';
+import SeeCampingList from './SeeCampingList'
+import ListReviewsPage from './ListReviews';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Landing(){
 
 
   const navigation = useNavigation();
-  let campgrounds
+  var savedCampgrounds
+  var savedReviews
   useEffect(()=>{
 
     const fetchDatas = async ()=>{
-
-  //     let userLat
-  //     let userLng
-
-  //   // Request location permission
-  //   const { status } = await Location.requestForegroundPermissionsAsync();
-  //   if (status === 'granted') {
-  //   const location = await Location.getCurrentPositionAsync({});
-  //   userLat = location.coords.latitude;
-  //   userLng  = location.coords.longitude;
-  // }
-
+      const username = await AsyncStorage.getItem("username")
+      console.log("username from async storage", username)
       try{
-        const response = await fetch(`http://${rootAddress}:3000/getcamps`,{
+        const response = await fetch(`http://${rootAddress}:3000/getsavedcamps`,{
         method: "POST",
         headers: {
           'content-type': 'application/json',
         },
         body: JSON.stringify({
-          "all": true,
-          "highlyRated": false,
-          "sortOrder":'1',
-          "camptype":'2'
-          // "userLat": userLat,
-          // "userLng": userLng,
-        }),
+          "username":username 
+        })
       })   
       if (response.ok) {
         //  successful
         const data = await response.json();
         console.log('fetch successful:', data);
-        campgrounds = data
+        savedCampgrounds = data
       } else {
         //  failed
         const errorData = await response.json();
@@ -57,6 +46,32 @@ export default function Landing(){
     catch (error) {
     console.error('Error during fetch:', error);
     }
+
+     try{
+      const response = await fetch(`http://${rootAddress}:3000/getsavedreviews`,{
+      method: "POST",
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        "username":username 
+      })
+    })   
+    if (response.ok) {
+      //  successful
+      const data = await response.json();
+      console.log('fetch successful:', data);
+      savedReviews = data
+    } else {
+      //  failed
+      const errorData = await response.json();
+      console.error('fetch failed:', response.status, errorData.error);
+    }
+     }
+     catch (error) {
+  console.error('Error during fetch:', error);
+     }
+
   }
     fetchDatas()
 
@@ -76,12 +91,7 @@ export default function Landing(){
             <Text style={styles.navigateButtonText}>Filters</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
-            style={styles.navigateButton}
-            onPress={() => navigation.navigate('AddReviewPage')}
-          >
-            <Text style={styles.navigateButtonText}>Add Review</Text>
-          </TouchableOpacity>
+         
           
 
           {/* <TouchableOpacity
@@ -94,13 +104,17 @@ export default function Landing(){
           <TouchableOpacity
             style={styles.navigateButton}
           >
-            <Text style={styles.navigateButtonText}>My reviews</Text>
+            <Text style={styles.navigateButtonText}
+            onPress={() => navigation.navigate('SeeCampingList',{"campgrounds":savedCampgrounds})}
+            >My Saved spots</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.navigateButton}
           >
             
-            <Text style={styles.navigateButtonText}>My Spots</Text>
+            <Text style={styles.navigateButtonText}
+            onPress={() => navigation.navigate('ListReviewsPage',{"reviews":savedReviews})}
+           >My Saved Reviews</Text>
           </TouchableOpacity>
     </View>
     )

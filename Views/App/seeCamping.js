@@ -1,8 +1,6 @@
 import { rootAddress } from "../../constants";
 import {useNavigation} from '@react-navigation/native'
-import { ComponentImage } from "../../Components/ComponentImage";
-import { ComponentTextInSignupLogin } from "../../Components/ComponentTextInSignupLogin";
-
+import ListReviewsPage from "./ListReviews";
 
 // AIzaSyDbLex0PYjrAtRSWodg7atWKDZSeUDJdVg
 // export default function SeeCamping(){
@@ -65,43 +63,79 @@ import { ComponentTextInSignupLogin } from "../../Components/ComponentTextInSign
     //   },
     // });
 
-    import React from 'react';
+    import React, { useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity,StyleSheet } from 'react-native';
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-const saveCampground = async function(campgroundId){
-  const username = AsyncStorage.getItem("username")
-  try{
-    const response = await fetch(`http://${rootAddress}:3000/savecamp`,{
-    method: "POST",
-    headers: {
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify({
-      "campgroundId": campgroundId,
-      "username": username,
-    }),
-  })
-  if (response.ok) {
-    // save successful
-    const data = await response.json();
-    console.log('save successful:', data.message);
-    await AsyncStorage.setItem('username', username);
 
-  } else {
-    // save failed
-    const errorData = await response.json();
-    console.error('save failed:', response.status, errorData.error);
-  }
-}
-catch (error) {
-console.error('Error during save:', error);
-}
-}
+
+
+
+
+
 const SeeCamping = ({ route }) => {
   const { campground } = route.params;
   const apiKey = 'AIzaSyDbLex0PYjrAtRSWodg7atWKDZSeUDJdVg';
   const navigation = useNavigation()
   const imageUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${campground.photo_reference}&key=${apiKey}`;
+
+  const saveCampground = async function (campgroundId) {
+    try {
+      
+      const username = await AsyncStorage.getItem("username");
+  
+      const response = await fetch(`http://${rootAddress}:3000/savecamp`, {
+        method: "POST",
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          "campgroundId": campgroundId,
+          "username": username,
+        }),
+      });
+  
+      if (response.ok) {
+        // Save successful
+        const data = await response.json();
+        console.log('Save successful:', data.message);
+  
+      } else {
+        // Save failed
+        const errorData = await response.json();
+        console.error('Save failed:', response.status, errorData.error);
+      }
+    } catch (error) {
+      console.error('Error during save:', error);
+    }
+  };
+
+  const seeReviews = (placeId) => async () => {
+    try {
+      const response = await fetch(`http://${rootAddress}:3000/getreviews`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          campgroundId: placeId,
+        }),
+      });
+  
+      if (response.ok) {
+        const reviews = await response.json();
+        console.log('Reviews:', reviews);
+        
+        navigation.navigate('ListReviewsPage', {reviews });
+  
+      } else {
+        const errorData = await response.json();
+        console.error('Fetch failed:', response.status, errorData.error);
+      }
+    } catch (error) {
+      console.error('Error during fetch:', error);
+    }
+  };
 
   return (
     <View style={styles.container}>
@@ -109,20 +143,22 @@ const SeeCamping = ({ route }) => {
         <Image style={styles.cover} resizeMode="contain" source={{ uri: imageUrl }} />
         <View style={styles.content}>
           <Text style={styles.title}>{campground.name}</Text>
-          <Text>Price Level: {campground.price_level || 'Not specified'}</Text>
+          <Text>Price Level: {campground.price_level || 'Not enough Data'}</Text>
           <Text>Distance From You: {Math.round(campground.distanceFromYou)} meters</Text>
           <Text>Rating: {campground.rating || 'Not available'} stars</Text>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ListReviewsPage')} >
+            <TouchableOpacity style={styles.button} onPress={seeReviews(campground.place_id)} >
               <Text style={styles.buttonText}>See Reviews</Text>
             </TouchableOpacity>
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AddReviewPage')} >
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AddReviewPage',{"campgroundId":campground.place_id})} >
               <Text style={styles.buttonText}>Write Review</Text>
             </TouchableOpacity>
-            
-            <TouchableOpacity style={styles.button} onPress={saveCampground(campgroundId)}>
+            <TouchableOpacity style={styles.button} onPress={()=>saveCampground(campground.place_id)}>
                     <Text style={styles.buttonText}>Save</Text>
             </TouchableOpacity>
+            {/* <TouchableOpacity style={styles.button} onPress={saveCampground(campgroundId)}>
+                    <Text style={styles.buttonText}>Save</Text>
+            </TouchableOpacity> */}
 
           </View>
         </View>
@@ -166,7 +202,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FF7657',
     padding: 10,
     borderRadius: 5,
-    width: '48%', // Adjust as needed based on your design
+    width: '33%', // Adjust as needed based on your design
     alignItems: 'center',
   },
   buttonText: {

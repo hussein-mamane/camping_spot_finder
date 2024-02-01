@@ -94,6 +94,7 @@ const exactDistance = (lat1, lon1, lat2, lon2)=> {
 app.post('/getsavedcamps', async (req, res) => {
   try {
     const { username } = req.body;
+    console.log("express log", username)
     const user = await User.findOne({ username });
     
     if (!user) {
@@ -105,14 +106,41 @@ app.post('/getsavedcamps', async (req, res) => {
 
     // Fetch campgrounds based on the saved place_ids
     const savedCampgrounds = await Camp.find({ place_id: { $in: savedPlaceIds } });
+    const savedRvs = await Rvpark.find({ place_id: { $in: savedPlaceIds } });
+    const combinedPlaces = savedCampgrounds.concat(savedRvs);
+    //remove Rv et campground at same time which duplicates
+    campingPlaces = Array.from(new Set(combinedPlaces.map(place => place.place_id)))
+  .map(placeId => combinedPlaces.find(place => place.place_id === placeId));
 
-    res.json(savedCampgrounds);
+    res.json(campingPlaces);
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
 
+app.post('/getsavedreviews', async (req, res) => {
+  try {
+    const { username } = req.body;
+    const user = await User.findOne({ username });
+
+    if (!user) {
+      console.log("express log", username)
+      return res.status(404).json({ error: 'User not found.' });
+    }
+
+    // Access the array of place_ids
+    const savedPlaceIds = user.savedCampgrounds;
+
+    // Fetch reviews based on the saved place_ids
+    const savedReviews = await Review.find({ "campgroundId": { $in: savedPlaceIds } });
+
+    res.json(savedReviews);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 
 app.post('/getcamps', async (req, res) => {
@@ -181,7 +209,6 @@ app.post('/getcamps', async (req, res) => {
     res.status(500).send('Internal Server Error');
   }
 });
-
 app.post('/savecamp', async (req, res) => {
   try {
     const { campgroundId, username } = req.body;
@@ -219,7 +246,6 @@ app.post('/savecamp', async (req, res) => {
     return res.status(500).json({ error: 'Internal Server Error' });
   }
 });
-
 app.post('/addreview', async (req, res) => {
   const { campgroundId, title, comment, currentDate, rating, userId } = req.body;
 

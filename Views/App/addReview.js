@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { Rating , RatingInput} from 'react-native-stock-star-rating';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { rootAddress } from '../../constants';
 
 const AddReviewPage = ({ route }) => {
 
@@ -32,9 +32,30 @@ const AddReviewPage = ({ route }) => {
     getUserIdFromStorage();
   }, []);
 
-  const handleSaveReview = () => {
+  const handleSaveReview = async () => {
     // Add your logic to save the review here
     console.log('Review saved:', { title, comment, currentDate,rating,userId, campgroundId });
+    try{
+      const response = await fetch(`http://${rootAddress}:3000/addreview`,{
+      method: "POST",
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({"title": title,"comment" :comment, "currentDate":currentDate,"rating":rating,"userId":userId, "campgroundId":campgroundId }),
+    })
+    if (response.ok) {
+      // Registration successful
+      const data = await response.json();
+      console.log('save successful:', data.message);
+    } else {
+      // Registration failed
+      const errorData = await response.json();
+      console.error('save failed:', response.status, errorData.error);
+    }
+  }
+  catch (error) {
+  console.error('Error during Login:', error);
+}
   };
 
   return (

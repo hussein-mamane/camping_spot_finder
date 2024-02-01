@@ -5,71 +5,66 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity,StyleSheet,ScrollView } from 'react-native';
 // AIzaSyDbLex0PYjrAtRSWodg7atWKDZSeUDJdVg
 const SeeCampingList = ({ route }) => {
-  const apiKey = '';
+  const apiKey = 'AIzaSyDbLex0PYjrAtRSWodg7atWKDZSeUDJdVg';
 
-  const saveCampground = async function (campgroundId) {
+
+  const navigation = useNavigation();
+  const { campgrounds } = route.params;
+  const seeReviews = (placeId) => async () => {
     try {
-      // Retrieve the username from AsyncStorage
-      const username = await AsyncStorage.getItem("username");
-  
-      const response = await fetch(`http://${rootAddress}:3000/savecamp`, {
-        method: "POST",
+      const response = await fetch(`http://${rootAddress}:3000/getreviews`, {
+        method: 'POST',
         headers: {
-          'content-type': 'application/json',
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          "campgroundId": campgroundId,
-          "username": username,
+          campgroundId: placeId,
         }),
       });
   
       if (response.ok) {
-        // Save successful
-        const data = await response.json();
-        console.log('Save successful:', data.message);
+        const reviews = await response.json();
+        console.log('Reviews:', reviews);
+        
+        navigation.navigate('ListReviewsPage', {reviews });
   
-        // Store the username in AsyncStorage
-        await AsyncStorage.setItem('username', username);
       } else {
-        // Save failed
         const errorData = await response.json();
-        console.error('Save failed:', response.status, errorData.error);
+        console.error('Fetch failed:', response.status, errorData.error);
       }
     } catch (error) {
-      console.error('Error during save:', error);
+      console.error('Error during fetch:', error);
     }
   };
+ 
   
-  const navigation = useNavigation();
-  const { campgrounds } = route.params;
-  const renderCampgrounds = () => {
-  return campgrounds.map((campground, index) => {
-      const imageUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${campground.photo_reference}&key=${apiKey}`;
 
-      return (
-        <ScrollView>
-          {campgrounds.map((campground) => (
+  const renderCampgrounds = () => {
+    return (
+      <ScrollView>
+        {campgrounds.map((campground) => {
+          const imageUrl = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${campground.photo_reference}&key=${apiKey}`;
+  
+          return (
             <View key={campground.place_id} style={styles.card}>
               <Image style={styles.cover} resizeMode="contain" source={{ uri: imageUrl }} />
               <View style={styles.content}>
                 <Text style={styles.title}>{campground.name}</Text>
-                <Text>Price Level: {campground.price_level || 'Not specified'}</Text>
-                <Text>Distance From You: {Math.round(campground.distanceFromYou)} meters</Text>
+                <Text>Price Level: {campground.price_level || 'Not enough Data'}</Text>
                 <Text>Rating: {campground.rating || 'Not available'} stars</Text>
                 <View style={styles.buttonContainer}>
-                  <TouchableOpacity style={styles.button} onPress={saveCampground(campground)}>
+                  <TouchableOpacity style={styles.button} onPress={seeReviews(campground.place_id)}>
                     <Text style={styles.buttonText}>See Reviews</Text>
                   </TouchableOpacity>
                 </View>
               </View>
             </View>
-          ))}
-        </ScrollView>
-      );
-      
-    });
+          );
+        })}
+      </ScrollView>
+    );
   };
-
+  
   return (
     <ScrollView contentContainerStyle={styles.container}>
       {renderCampgrounds()}

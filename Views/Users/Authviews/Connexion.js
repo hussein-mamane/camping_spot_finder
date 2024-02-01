@@ -41,7 +41,7 @@ export default function Inscription(){
         // Registration successful
         const data = await response.json();
         console.log('Login successful:', data.message);
-        await AsyncStorage.setItem('username', username);
+        await AsyncStorage.setItem("username", username);
 
         navigation.navigate('AppStack')
       } else {

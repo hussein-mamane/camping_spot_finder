@@ -2,33 +2,35 @@ import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ScrollView } from 'react-native';
 
-const ListReviewsPage = () => {
+const ListReviewsPage = ({route}) => {
   const navigation = useNavigation();
-
-  const testReviews = [
-    {
-      campgroundId: "ChIJ8aVri9i2pw0RlC2KqfcMvkI",
-      title: "sweet spot",
-      rating: 5,
-      currentDate: "08/06/2023",
-      comment:
-        "I had a fun time in that campground, It was neat, clean, no mosquitoes, a lot of activities",
-      username: "Ali",
-    },
-    {
-      campgroundId: "ChIJ8aVri9i2pw0RlC2KqfcMvkI",
-      title: "sweet spot",
-      rating: 5,
-      currentDate: "07/06/2023",
-      comment:
-        "I had a fun time in that campground, It was neat, clean, no mosquitoes, a lot of activities",
-      username: "BenjaminBauer"
-    },
-  ];
+  
+  const { reviews } = route.params;
+  console.log(reviews.length)
+//   const testReviews = [
+//     {
+//       campgroundId: "ChIJ8aVri9i2pw0RlC2KqfcMvkI",
+//       title: "sweet spot",
+//       rating: 5,
+//       currentDate: "08/06/2023",
+//       comment:
+//         "I had a fun time in that campground, It was neat, clean, no mosquitoes, a lot of activities",
+//       username: "Ali",
+//     },
+//     {
+//       campgroundId: "ChIJ8aVri9i2pw0RlC2KqfcMvkI",
+//       title: "sweet spot",
+//       rating: 5,
+//       currentDate: "07/06/2023",
+//       comment:
+//         "I had a fun time in that campground, It was neat, clean, no mosquitoes, a lot of activities",
+//       username: "BenjaminBauer"
+//     },
+//   ];
 
   return (
     <ScrollView style={styles.container}>
-      {testReviews.map((review, index) => (
+      {reviews.map((review, index) => (
         <View key={index} style={styles.reviewContainer}>
           <Text style={styles.title}>{review.title}</Text>
           <Text>Rating: {review.rating}/5</Text>
