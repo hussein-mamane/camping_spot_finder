@@ -2,6 +2,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 import Filterpage from './screens/filterpage';
+import AddReviewPage from './screens/AddReview'
 
 
 const Stack = createStackNavigator();
@@ -13,12 +14,18 @@ const Stack = createStackNavigator();
 </Stack.Navigator>
 </NavigationContainer>*/
 
+
+/*<NavigationContainer>
+<Stack.Navigator>
+  <Stack.Screen name="Filterpage" component={Filterpage} options={{ headerShown: false }} />
+</Stack.Navigator>
+</NavigationContainer>*/
+
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Filterpage" component={Filterpage} options={{ headerShown: false }} />
-      </Stack.Navigator>
-    </NavigationContainer>
+
+     
+      <AddReviewPage/>
+    
   );
 }
