@@ -10,7 +10,7 @@ const appStack = createStackNavigator();
 
 function AppStack() {
   return (
-    <appStack.Navigator screenOptions={{ headerShown: true }}>
+    <appStack.Navigator screenOptions={{ headerShown: false }}>
       <appStack.Screen name="Landing" component={Landing} />
       <appStack.Screen name="Filterpage" component={Filterpage} />
       <appStack.Screen name="CampgroundMap" component={CampgroundMap} />

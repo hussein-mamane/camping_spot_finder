@@ -108,14 +108,14 @@ export default function Landing(){
             onPress={() => navigation.navigate('SeeCampingList',{"campgrounds":savedCampgrounds})}
             >My Saved spots</Text>
           </TouchableOpacity>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={styles.navigateButton}
           >
             
             <Text style={styles.navigateButtonText}
             onPress={() => navigation.navigate('ListReviewsPage',{"reviews":savedReviews})}
            >My Saved Reviews</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
     </View>
     )
 }

@@ -6,27 +6,7 @@ const ListReviewsPage = ({route}) => {
   const navigation = useNavigation();
   
   const { reviews } = route.params;
-  console.log(reviews.length)
-//   const testReviews = [
-//     {
-//       campgroundId: "ChIJ8aVri9i2pw0RlC2KqfcMvkI",
-//       title: "sweet spot",
-//       rating: 5,
-//       currentDate: "08/06/2023",
-//       comment:
-//         "I had a fun time in that campground, It was neat, clean, no mosquitoes, a lot of activities",
-//       username: "Ali",
-//     },
-//     {
-//       campgroundId: "ChIJ8aVri9i2pw0RlC2KqfcMvkI",
-//       title: "sweet spot",
-//       rating: 5,
-//       currentDate: "07/06/2023",
-//       comment:
-//         "I had a fun time in that campground, It was neat, clean, no mosquitoes, a lot of activities",
-//       username: "BenjaminBauer"
-//     },
-//   ];
+  const len = reviews.length
 
   return (
     <ScrollView style={styles.container}>
@@ -36,9 +16,9 @@ const ListReviewsPage = ({route}) => {
           <Text>Rating: {review.rating}/5</Text>
           <Text>Date: {review.currentDate}</Text>
           <Text>Comment: {review.comment}</Text>
-          <Text>Username: {review.username}</Text>
+          <Text>Written by: {review.userId}</Text>
           {/* Save Review Button */}
-          <View style={styles.buttonContainer}>
+          {/* <View style={styles.buttonContainer}>
             <TouchableOpacity
               style={styles.button}
               onPress={() =>
@@ -46,9 +26,10 @@ const ListReviewsPage = ({route}) => {
               }>
               <Text style={styles.buttonText}>Save Review</Text>
             </TouchableOpacity>
-          </View>
+          </View> */}
         </View>
       ))}
+      
     </ScrollView>
   );
 };

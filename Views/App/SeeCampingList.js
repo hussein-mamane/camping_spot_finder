@@ -2,17 +2,45 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { rootAddress } from "../../constants";
 import {useNavigation} from '@react-navigation/native'
 import React from 'react';
-import { View, Text, Image, TouchableOpacity,StyleSheet,ScrollView } from 'react-native';
+import { View, Text, Alert,Image, TouchableOpacity,StyleSheet,ScrollView } from 'react-native';
 // AIzaSyDbLex0PYjrAtRSWodg7atWKDZSeUDJdVg
 const SeeCampingList = ({ route }) => {
   const apiKey = 'AIzaSyDbLex0PYjrAtRSWodg7atWKDZSeUDJdVg';
 
+    
 
   const navigation = useNavigation();
   const { campgrounds } = route.params;
   const seeReviews = (placeId) => async () => {
     try {
       const response = await fetch(`http://${rootAddress}:3000/getreviews`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          campgroundId: placeId,
+        }),
+      });
+  
+      if (response.ok) {
+        const reviews = await response.json();
+        console.log('Reviews:', reviews);
+        
+        navigation.navigate('ListReviewsPage', {reviews });
+  
+      } else {
+        const errorData = await response.json();
+        console.error('Fetch failed:', response.status, errorData.error);
+      }
+    } catch (error) {
+      console.error('Error during fetch:', error);
+    }
+  };
+
+  const deleteSaved = (placeId) => async () => {
+    try {
+      const response = await fetch(`http://${rootAddress}:3000/deletesavedcamp`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,10 +79,13 @@ const SeeCampingList = ({ route }) => {
               <View style={styles.content}>
                 <Text style={styles.title}>{campground.name}</Text>
                 <Text>Price Level: {campground.price_level || 'Not enough Data'}</Text>
-                <Text>Rating: {campground.rating || 'Not available'} stars</Text>
+                <Text>Rating: {campground.rating || 'Not enough Data to give'} stars</Text>
                 <View style={styles.buttonContainer}>
                   <TouchableOpacity style={styles.button} onPress={seeReviews(campground.place_id)}>
                     <Text style={styles.buttonText}>See Reviews</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity style={styles.button} onPress={deleteSaved(campground.place_id)}>
+                    <Text style={styles.buttonText}>Delete</Text>
                   </TouchableOpacity>
                 </View>
               </View>

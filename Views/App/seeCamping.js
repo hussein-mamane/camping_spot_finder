@@ -64,7 +64,7 @@ import ListReviewsPage from "./ListReviews";
     // });
 
     import React, { useEffect } from 'react';
-import { View, Text, Image, TouchableOpacity,StyleSheet } from 'react-native';
+import { View, Text, Image,  Alert,TouchableOpacity,StyleSheet } from 'react-native';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
@@ -98,7 +98,7 @@ const SeeCamping = ({ route }) => {
       if (response.ok) {
         // Save successful
         const data = await response.json();
-        console.log('Save successful:', data.message);
+        Alert.alert("Info","Success")
   
       } else {
         // Save failed
@@ -106,7 +106,7 @@ const SeeCamping = ({ route }) => {
         console.error('Save failed:', response.status, errorData.error);
       }
     } catch (error) {
-      console.error('Error during save:', error);
+      Alert.alert("Info",error)
     }
   };
 

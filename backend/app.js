@@ -250,6 +250,15 @@ app.post('/addreview', async (req, res) => {
   const { campgroundId, title, comment, currentDate, rating, userId } = req.body;
 
   try {
+    // Check
+    const existingReview = await Review.findOne({ campgroundId, userId });
+
+    if (existingReview) {
+      // If a review already exists
+      return res.status(400).json({ error: 'Review already exists for this user and campground.' });
+    }
+
+    // If no existing review is found
     const newReview = new Review({ campgroundId, title, comment, currentDate, rating, userId });
     const savedReview = await newReview.save();
     res.json(savedReview);
@@ -258,11 +267,12 @@ app.post('/addreview', async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 });
+
 app.post('/getreviews', async (req, res) => {
   const { campgroundId } = req.body;
 
   try {
-    const reviews = await Review.find({ "place_id":campgroundId });
+    const reviews = await Review.find({ campgroundId });
     res.json(reviews);
   } catch (error) {
     console.error(error);
