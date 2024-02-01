@@ -60,12 +60,7 @@ export default function Landing(){
             <Text style={styles.navigateButtonText}>Filters</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
-            style={styles.navigateButton}
-            onPress={() => navigation.navigate('SeeCamping')}
-          >
-            <Text style={styles.navigateButtonText}>See</Text>
-          </TouchableOpacity>
+          
 
           <TouchableOpacity
             style={styles.navigateButton}
