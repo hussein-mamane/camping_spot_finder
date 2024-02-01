@@ -97,13 +97,14 @@ const SeeCamping = ({ route }) => {
   
       if (response.ok) {
         // Save successful
-        const data = await response.json();
+        // const data = await response.json();
         Alert.alert("Info","Success")
   
       } else {
         // Save failed
         const errorData = await response.json();
-        console.error('Save failed:', response.status, errorData.error);
+        // console.error('Save failed:', response.status, errorData.error);
+        Alert.alert('Save failed:', errorData.error);
       }
     } catch (error) {
       Alert.alert("Info",error)
@@ -130,10 +131,12 @@ const SeeCamping = ({ route }) => {
   
       } else {
         const errorData = await response.json();
-        console.error('Fetch failed:', response.status, errorData.error);
+        // console.error('Fetch failed:', response.status, errorData.error);
+        Alert.alert('Fetch failed:', errorData.error);
       }
     } catch (error) {
-      console.error('Error during fetch:', error);
+      Alert.alert('Error during fetch:', error);
+      // console.error('Error during fetch:', error);
     }
   };
 
@@ -143,7 +146,7 @@ const SeeCamping = ({ route }) => {
         <Image style={styles.cover} resizeMode="contain" source={{ uri: imageUrl }} />
         <View style={styles.content}>
           <Text style={styles.title}>{campground.name}</Text>
-          <Text>Price Level: {campground.price_level || 'Not enough Data'}</Text>
+          {/* <Text>Price Level: {campground.price_level || 'Not enough Data'}</Text> */}
           <Text>Distance From You: {Math.round(campground.distanceFromYou)} meters</Text>
           <Text>Rating: {campground.rating || 'Not available'} stars</Text>
           <View style={styles.buttonContainer}>

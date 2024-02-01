@@ -268,6 +268,46 @@ app.post('/addreview', async (req, res) => {
   }
 });
 
+app.post('/deletesavedcamp', async (req, res) => {
+  try {
+    const { campgroundId, username } = req.body;
+
+    // Check if the campgroundId and username are provided
+    if (!campgroundId || !username) {
+      return res.status(400).json({ error: 'Both campgroundId and username are required.' });
+    }
+
+    // Find the user in the database
+    const user = await User.findOne({ username });
+
+    // Check if the user exists
+    if (!user) {
+      return res.status(404).json({ error: 'User not found.' });
+    }
+
+    // Check if the campground is in the user's savedCampgrounds
+    const campgroundIndex = user.savedCampgrounds.findIndex(item => item == campgroundId);
+
+    if (campgroundIndex === -1) {
+      return res.status(400).json({ error: 'Campground not found in user\'s saved list.' });
+    }
+
+    // Remove the campground from the user's savedCampgrounds
+    // user.savedCampgrounds.remove(campgroundId);
+
+    user.savedCampgrounds = user.savedCampgrounds.filter(item => item !== campgroundId)
+
+    // Save the updated user
+    await user.save();
+
+    return res.status(200).json({ message: 'Campground deleted successfully.' });
+  } catch (error) {
+    console.error('Error during delete:', error);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
 app.post('/getreviews', async (req, res) => {
   const { campgroundId } = req.body;
 

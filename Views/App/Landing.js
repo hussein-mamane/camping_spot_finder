@@ -91,31 +91,24 @@ export default function Landing(){
             <Text style={styles.navigateButtonText}>Filters</Text>
           </TouchableOpacity>
 
-         
-          
-
-          {/* <TouchableOpacity
-            style={styles.navigateButton}
-            onPress={() => navigation.navigate('CampgroundMap',{"campgrounds":campgrounds})}
-          >
-            <Text style={styles.navigateButtonText}>Map</Text>
-          </TouchableOpacity> */}
+        
           
           <TouchableOpacity
             style={styles.navigateButton}
           >
             <Text style={styles.navigateButtonText}
-            onPress={() => navigation.navigate('SeeCampingList',{"campgrounds":savedCampgrounds})}
+            onPress={() => navigation.navigate('SeeCampingList')}
             >My Saved spots</Text>
           </TouchableOpacity>
+
           {/* <TouchableOpacity
             style={styles.navigateButton}
           >
-            
             <Text style={styles.navigateButtonText}
-            onPress={() => navigation.navigate('ListReviewsPage',{"reviews":savedReviews})}
-           >My Saved Reviews</Text>
+            onPress={() => navigation.navigate('SeeCampingList',{"campgrounds":savedCampgrounds})}
+            >My Saved spots</Text>
           </TouchableOpacity> */}
+          
     </View>
     )
 }

@@ -54,13 +54,12 @@ const AddReviewPage = ({ route }) => {
     } else {
       // Registration failed
       const errorData = await response.json();
-      console.error('save failed:', response.status, errorData.error);
+      // console.error('save failed:', response.status, errorData.error);
+      Alert.alert("Failed",errorData.error)
     }
   }
   catch (error) {
   console.error('Error during Login:', error);
-}finally{
-  navigation.navigate("FilterPage")
 }
   };
 
