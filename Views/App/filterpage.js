@@ -13,6 +13,7 @@ import {
 import {Ionicons} from '@expo/vector-icons';
 import * as Icon from "react-native-vector-icons";
 import { rootAddress } from '../../constants'
+import * as Location from 'expo-location';
 
 const { width, height } = Dimensions.get('screen');
 
@@ -52,12 +53,24 @@ export default class Filterpage extends React.Component {
     let camptype = '2'//all
     if (type === "tenting") camptype = "0"
     if (type === "rv") camptype = "1"
+    let userLat
+    let userLng
+
+    // Request location permission
+  const { status } = await Location.requestForegroundPermissionsAsync();
+  if (status === 'granted') {
+    const location = await Location.getCurrentPositionAsync({});
+    userLat = location.coords.latitude;
+    userLng  = location.coords.longitude;
+  }
     
     console.log(JSON.stringify({
       "all": option_all,
       "highlyRated": option_rated,
       "sortOrder":sortOrder,
-      "camptype":camptype
+      "camptype":camptype,
+        "userLat": userLat,
+        "userLng": userLng,
     }))
 
     try{
@@ -70,7 +83,9 @@ export default class Filterpage extends React.Component {
         "all": option_all,
         "highlyRated": option_rated,
         "sortOrder":sortOrder,
-        "camptype":camptype
+        "camptype":camptype,
+        "userLat": userLat,
+        "userLng": userLng,
       }),
     })
 
@@ -93,8 +108,8 @@ export default class Filterpage extends React.Component {
     console.error('Error during fetch:', error);
   }
 
-}
   
+}
   renderHeader() {
     return (
       <View style={styles.header}>

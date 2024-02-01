@@ -2,6 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+// import { getDistance, getPreciseDistance } from 'geolib';
+const geolib = require('geolib')
+
 
 const app = express();
 const port = 3000;
@@ -33,8 +36,8 @@ const campSchema = new mongoose.Schema({
 
 const Camp = mongoose.model('Grounds', campSchema);
 const Rvpark = mongoose.model('Rvs',campSchema)
-
-
+const User = mongoose.model('Users',userSchema)
+//Unused
 function haversineDistance(lat1, lon1, lat2, lon2) {
   // Convert latitude and longitude from degrees to radians
   const toRadians = (angle) => (angle * Math.PI) / 180;
@@ -55,6 +58,19 @@ function haversineDistance(lat1, lon1, lat2, lon2) {
   //distance
   const distance = radiusOfEarth * c;
   return distance;
+} 
+
+const exactDistance = (lat1, lon1, lat2, lon2)=> {
+  const point1 = {
+    latitude : lat1,
+    longitude : lon1
+  }
+  const point2 = {
+    latitude : lat2,
+    longitude : lon2
+  }
+  const result = geolib.getPreciseDistance(point1, point2) 
+  return result
 }
 
 app.post('/getcamps', async (req, res) => {
@@ -103,7 +119,7 @@ app.post('/getcamps', async (req, res) => {
     }
 
     campingPlaces = campingPlaces.map(place => {
-      const distanceFromYou = haversineDistance(userLat, userLng, place.location.lat, place.location.lng);
+      const distanceFromYou = exactDistance(userLat, userLng, place.location.lat, place.location.lng);
       return { ...place.toObject(), distanceFromYou };
     });
     // Calculate distance and sort

@@ -34,7 +34,7 @@ const CampgroundMap = ({ route, navigation }) => {
             key={campground.place_id}
             coordinate={{ latitude: campground.location.lat, longitude: campground.location.lng }}
             title={campground.name}
-            description={campground.distanceFromYou}
+            description={Math.round(campground.distanceFromYou).toString()+" meters"}
             onPress={() => handleMarkerPress(campground)}
           />
         ))}

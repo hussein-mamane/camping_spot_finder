@@ -3,6 +3,7 @@ import Landing from './Landing';
 import Filterpage from './filterpage';
 import CampgroundMap from './Camping';
 import SeeCamping from './seeCamping';
+import AddReviewPage from './addReview'
 const appStack = createStackNavigator();
 
 function AppStack() {
@@ -12,6 +13,7 @@ function AppStack() {
       <appStack.Screen name="Filterpage" component={Filterpage} />
       <appStack.Screen name="CampgroundMap" component={CampgroundMap} />
       <appStack.Screen name="SeeCamping" component={SeeCamping} />
+      <appStack.Screen name="AddReviewPage" component={AddReviewPage} />
     </appStack.Navigator>
   );
 }

@@ -10,6 +10,7 @@ import { ComponentImage} from'../../../Components/ComponentImage'
 import { ComponentBoxLoginPage} from'../../../Components/ComponentBoxLoginPage'
 import { ComponentTextInSignupLogin} from'../../../Components/ComponentTextInSignupLogin'
 import { rootAddress } from '../../../constants'; 
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Inscription(){
 
@@ -40,6 +41,8 @@ export default function Inscription(){
         // Registration successful
         const data = await response.json();
         console.log('Login successful:', data.message);
+        await AsyncStorage.setItem('username', username);
+
         navigation.navigate('AppStack')
       } else {
         // Registration failed

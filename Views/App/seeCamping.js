@@ -66,7 +66,7 @@ import { ComponentTextInSignupLogin } from "../../Components/ComponentTextInSign
     // });
 
     import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, TouchableOpacity,StyleSheet } from 'react-native';
 
 const SeeCamping = ({ route }) => {
   const { campground } = route.params;
@@ -83,6 +83,14 @@ const SeeCamping = ({ route }) => {
           <Text>Price Level: {campground.price_level || 'Not specified'}</Text>
           <Text>Distance From You: {Math.round(campground.distanceFromYou)} meters</Text>
           <Text>Rating: {campground.rating || 'Not available'} stars</Text>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('ListReviews')} >
+              <Text style={styles.buttonText}>See Reviews</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('AddReviewPage')} >
+              <Text style={styles.buttonText}>Write Review</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     </View>
@@ -114,6 +122,22 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginBottom: 8,
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 10,
+  },
+  button: {
+    backgroundColor: '#FF7657',
+    padding: 10,
+    borderRadius: 5,
+    width: '48%', // Adjust as needed based on your design
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
 

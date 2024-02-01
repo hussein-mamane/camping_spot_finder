@@ -5,6 +5,8 @@ import {styles} from '../../Styles'
 import {rootAddress} from '../../constants'
 import { ScrollView } from 'react-native-gesture-handler';
 import SeeCamping from './seeCamping';
+import AddReviewPage from './addReview';
+import * as Location from 'expo-location';
 
 export default function Landing(){
 
@@ -14,6 +16,18 @@ export default function Landing(){
   useEffect(()=>{
 
     const fetchDatas = async ()=>{
+
+  //     let userLat
+  //     let userLng
+
+  //   // Request location permission
+  //   const { status } = await Location.requestForegroundPermissionsAsync();
+  //   if (status === 'granted') {
+  //   const location = await Location.getCurrentPositionAsync({});
+  //   userLat = location.coords.latitude;
+  //   userLng  = location.coords.longitude;
+  // }
+
       try{
         const response = await fetch(`http://${rootAddress}:3000/getcamps`,{
         method: "POST",
@@ -25,6 +39,8 @@ export default function Landing(){
           "highlyRated": false,
           "sortOrder":'1',
           "camptype":'2'
+          // "userLat": userLat,
+          // "userLng": userLng,
         }),
       })   
       if (response.ok) {
@@ -60,14 +76,20 @@ export default function Landing(){
             <Text style={styles.navigateButtonText}>Filters</Text>
           </TouchableOpacity>
 
+          <TouchableOpacity
+            style={styles.navigateButton}
+            onPress={() => navigation.navigate('AddReviewPage')}
+          >
+            <Text style={styles.navigateButtonText}>Add Review</Text>
+          </TouchableOpacity>
           
 
-          <TouchableOpacity
+          {/* <TouchableOpacity
             style={styles.navigateButton}
             onPress={() => navigation.navigate('CampgroundMap',{"campgrounds":campgrounds})}
           >
             <Text style={styles.navigateButtonText}>Map</Text>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           
           <TouchableOpacity
             style={styles.navigateButton}
@@ -77,6 +99,7 @@ export default function Landing(){
           <TouchableOpacity
             style={styles.navigateButton}
           >
+            
             <Text style={styles.navigateButtonText}>My Spots</Text>
           </TouchableOpacity>
     </View>
