@@ -22,7 +22,13 @@ const userSchema = new mongoose.Schema({
   email: String,
   username: String,
   password: String,
+  //savedCampgrounds: [{ type: String, ref: 'Grounds' }]
+  // savedCampgrounds: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Grounds' }]
+  savedCampgrounds: [{ type: String}]
 });
+
+
+
 
 const campSchema = new mongoose.Schema({
   place_id: String,
@@ -33,6 +39,19 @@ const campSchema = new mongoose.Schema({
   },
   photo_reference: String,
 });
+
+const reviewSchema = new mongoose.Schema({
+  campgroundId: String,
+  title: String,
+  comment: String,
+  currentDate: String,
+  rating: Number,
+  userId: String,
+});
+
+const Review = mongoose.model('Reviews', reviewSchema);
+
+
 
 const Camp = mongoose.model('Grounds', campSchema);
 const Rvpark = mongoose.model('Rvs',campSchema)
@@ -72,6 +91,29 @@ const exactDistance = (lat1, lon1, lat2, lon2)=> {
   const result = geolib.getPreciseDistance(point1, point2) 
   return result
 }
+app.post('/getsavedcamps', async (req, res) => {
+  try {
+    const { username } = req.body;
+    const user = await User.findOne({ username });
+    
+    if (!user) {
+      return res.status(404).json({ error: 'User not found.' });
+    }
+
+    // Access the array of place_ids
+    const savedPlaceIds = user.savedCampgrounds;
+
+    // Fetch campgrounds based on the saved place_ids
+    const savedCampgrounds = await Camp.find({ place_id: { $in: savedPlaceIds } });
+
+    res.json(savedCampgrounds);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+
 
 app.post('/getcamps', async (req, res) => {
   try {
@@ -140,6 +182,67 @@ app.post('/getcamps', async (req, res) => {
   }
 });
 
+app.post('/savecamp', async (req, res) => {
+  try {
+    const { campgroundId, username } = req.body;
+
+    // Check 
+    if (!campgroundId || !username) {
+      return res.status(400).json({ error: ' campgroundId and username are required.' });
+    }
+
+    // Find 
+    let user = await User.findOne({ username });
+
+    // Check if the user exists
+    if (!user) {
+      return res.status(404).json({ error: 'User not found.' });
+    }
+
+    // if savedCampgrounds array is not defined
+    if (!user.savedCampgrounds) {
+      user.savedCampgrounds = [];
+    }
+
+    // check if the campground is already saved
+    if (user.savedCampgrounds.includes(campgroundId)) {
+      return res.status(400).json({ error: 'Campground already saved by the user.' });
+    }
+
+    // save the campground for the user
+    user.savedCampgrounds.push(campgroundId);
+    await user.save();
+
+    return res.status(200).json({ message: 'Campground saved successfully.' });
+  } catch (error) {
+    console.error('Error during save:', error);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.post('/addreview', async (req, res) => {
+  const { campgroundId, title, comment, currentDate, rating, userId } = req.body;
+
+  try {
+    const newReview = new Review({ campgroundId, title, comment, currentDate, rating, userId });
+    const savedReview = await newReview.save();
+    res.json(savedReview);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+app.post('/getreviews', async (req, res) => {
+  const { campgroundId } = req.body;
+
+  try {
+    const reviews = await Review.find({ "place_id":campgroundId });
+    res.json(reviews);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
 
 mongoose.connection.on('connected', () => {
   console.log('Connected to MongoDB')
