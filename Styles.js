@@ -128,7 +128,7 @@ export const styles = StyleSheet.create(
           navigateButtonText: {
             color: 'white',
             fontWeight: 'bold',
-            fontSize:18
+            fontSize:20
           },
           mapButton:{
             position: 'absolute',
@@ -148,10 +148,10 @@ export const styles = StyleSheet.create(
               },
           rowContainer: {
             flexDirection: 'row',
-            width: '100%', // Ensure it takes the full width of the screen
+            width: '100%', 
           },
           halfWidth: {
-            flex: 0.5, // Half width of the row
+            flex: 0.5, 
           },
         
     }

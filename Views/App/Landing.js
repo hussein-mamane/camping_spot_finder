@@ -12,6 +12,7 @@ import ListReviewsPage from './ListReviews';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { BigImage } from '../../Components/BigImage';
 import { ComponentImage } from '../../Components/ComponentImage';
+import {ComponentTextInSignupLogin}  from '../../Components/ComponentTextInSignupLogin';
 export default function Landing(){
 
 
@@ -110,7 +111,7 @@ export default function Landing(){
       style={[styles.navigateButton, styles.halfWidth]}
       onPress={() => navigation.navigate('Filterpage')}
     >
-      <Text style={styles.navigateButtonText}>Filters</Text>
+      <Text style={styles.navigateButtonText}>Filters to Map</Text>
     </TouchableOpacity>
 
     <TouchableOpacity
@@ -125,6 +126,7 @@ export default function Landing(){
 
 
 <BigImage source={require('../../assets/img_camp.png')}></BigImage>
+{/* <ComponentTextInSignupLogin>Did you know that going in nature help you recharging your batteries</ComponentTextInSignupLogin> */}
     </View>
     
     )

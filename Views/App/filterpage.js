@@ -113,9 +113,9 @@ export default class Filterpage extends React.Component {
   renderHeader() {
     return (
       <View style={styles.header}>
-        <View style={{  flex:1 }}>
+        {/* <View style={{  flex:1 }}>
          <Ionicons name='arrow-back' size={24} />
-        </View>
+        </View> */}
 
         <View style={{  flex:1 , alignItems: "center"}}>
           <Text style={styles.title}>Filter</Text>
@@ -165,12 +165,12 @@ export default class Filterpage extends React.Component {
                  <Text>Ratings</Text>
                </TouchableOpacity>
 
-               <TouchableOpacity
+               {/* <TouchableOpacity
                 style={[styles.button, sort === 'review' ? styles.active : null]}
                 onPress={()=> this.setState({sort : 'review'})}
                 >
                  <Text>Review</Text>
-               </TouchableOpacity>
+               </TouchableOpacity> */}
 
             </View>
         </View>  

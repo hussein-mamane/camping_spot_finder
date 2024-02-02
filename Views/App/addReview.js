@@ -5,12 +5,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { Rating , RatingInput} from 'react-native-stock-star-rating';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { rootAddress } from '../../constants';
-import Landing from './Landing';
 
 import {useNavigation} from '@react-navigation/native'
 const AddReviewPage = ({ route }) => {
 
-    const { campgroundId } = route.params;
+  const { campgroundId } = route.params;
   const [title, setTitle] = useState('');
   const [comment, setComment] = useState('');
   const [rating, setRating] = React.useState(0);

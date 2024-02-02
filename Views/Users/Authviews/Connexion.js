@@ -1,6 +1,6 @@
 import { Text,TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import React,{useState} from 'react';
+import React,{useEffect, useState} from 'react';
 import {styles} from '../../../Styles'
 import Landing from '../../App/Landing';
 
@@ -14,6 +14,19 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function Inscription(){
 
+  useEffect(() => {
+    const checkUsernameAndNavigate = async () => {
+      const username = await AsyncStorage.getItem("username");
+  
+      if (username && username !== "") {
+        navigation.navigate('AppStack');
+      }
+    };
+  
+    checkUsernameAndNavigate();
+  }, []);
+  
+  
   const navigation = useNavigation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');

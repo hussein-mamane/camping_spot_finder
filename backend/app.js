@@ -287,6 +287,9 @@ app.post('/savecamp', async (req, res) => {
 });
 app.post('/addreview', async (req, res) => {
   const { campgroundId, title, comment, currentDate, rating, userId } = req.body;
+  if (!campgroundId || !title || !comment || !currentDate || !rating || !userId) {
+    return res.status(400).json({ error: 'All fields are mandatory to write a review.' });
+  }
 
   try {
     // Check
