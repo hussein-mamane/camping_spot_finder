@@ -10,7 +10,8 @@ import * as Location from 'expo-location';
 import SeeCampingList from './SeeCampingList'
 import ListReviewsPage from './ListReviews';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+import { BigImage } from '../../Components/BigImage';
+import { ComponentImage } from '../../Components/ComponentImage';
 export default function Landing(){
 
 
@@ -73,7 +74,7 @@ export default function Landing(){
      }
 
   }
-    fetchDatas()
+    //fetchDatas()
 
   },[])
     
@@ -82,33 +83,49 @@ export default function Landing(){
 
 
   return( 
-    <View style={styles.boxLoginPage}>
+    // <View style={styles.boxLoginPage}>
 
-          <TouchableOpacity
-            style={styles.navigateButton}
-            onPress={() => navigation.navigate('Filterpage')}
-          >
-            <Text style={styles.navigateButtonText}>Filters</Text>
-          </TouchableOpacity>
+    //       <TouchableOpacity
+    //         style={styles.navigateButton}
+    //         onPress={() => navigation.navigate('Filterpage')}
+    //       >
+    //         <Text style={styles.navigateButtonText}>Filters</Text>
+    //       </TouchableOpacity>
 
         
           
-          <TouchableOpacity
-            style={styles.navigateButton}
-          >
-            <Text style={styles.navigateButtonText}
-            onPress={() => navigation.navigate('SeeCampingList')}
-            >My Saved spots</Text>
-          </TouchableOpacity>
+    //       <TouchableOpacity
+    //         style={styles.navigateButton}
+    //       >
+    //         <Text style={styles.navigateButtonText}
+    //         onPress={() => navigation.navigate('SeeCampingList')}
+    //         >My Saved spots</Text>
+    //       </TouchableOpacity>
 
-          {/* <TouchableOpacity
-            style={styles.navigateButton}
-          >
-            <Text style={styles.navigateButtonText}
-            onPress={() => navigation.navigate('SeeCampingList',{"campgrounds":savedCampgrounds})}
-            >My Saved spots</Text>
-          </TouchableOpacity> */}
           
+    // </View>
+<View style={styles.boxLoginPage}>
+    <View style={styles.rowContainer}>
+    <TouchableOpacity
+      style={[styles.navigateButton, styles.halfWidth]}
+      onPress={() => navigation.navigate('Filterpage')}
+    >
+      <Text style={styles.navigateButtonText}>Filters</Text>
+    </TouchableOpacity>
+
+    <TouchableOpacity
+      style={[styles.navigateButton, styles.halfWidth]}
+      onPress={() => navigation.navigate('SeeCampingList')}
+    >
+      <Text style={styles.navigateButtonText}>My Saved Spots</Text>
+    </TouchableOpacity>
     </View>
+{/* 
+    <ComponentImage source={require('../../assets/img_camp.png')}></ComponentImage> */}
+
+
+<BigImage source={require('../../assets/img_camp.png')}></BigImage>
+    </View>
+    
     )
 }

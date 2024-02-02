@@ -104,6 +104,11 @@ export const styles = StyleSheet.create(
             aspectRatio: 1, // Maintain aspect ratio (1:1 for square image)
             overflow: 'hidden',
           },
+        imageContainerBig: {
+            width: '100%', //reduction de la taille de l'image
+            aspectRatio: 1, // Maintain aspect ratio (1:1 for square image)
+            overflow: 'hidden',
+          },
         image: {
             flex: 1,
             width: undefined,
@@ -140,7 +145,14 @@ export const styles = StyleSheet.create(
             padding: 10,
             backgroundColor: '#FF7657',
             borderRadius: 5,
-              }
+              },
+          rowContainer: {
+            flexDirection: 'row',
+            width: '100%', // Ensure it takes the full width of the screen
+          },
+          halfWidth: {
+            flex: 0.5, // Half width of the row
+          },
         
     }
 )

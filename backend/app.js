@@ -38,6 +38,7 @@ const campSchema = new mongoose.Schema({
     lng:Number
   },
   photo_reference: String,
+  rating: Number,
 });
 
 const reviewSchema = new mongoose.Schema({
@@ -91,6 +92,44 @@ const exactDistance = (lat1, lon1, lat2, lon2)=> {
   const result = geolib.getPreciseDistance(point1, point2) 
   return result
 }
+
+app.post('/updaterating', async (req, res) => {
+  try {
+    // Find all campgrounds
+    const campPlaces = await Camp.find();
+    const rvParkPlaces = await Rvpark.find();
+    const combinedPlaces = campPlaces.concat(rvParkPlaces);
+
+    // Remove duplicates
+    const campgrounds = Array.from(new Set(combinedPlaces.map(place => place.place_id)))
+      .map(placeId => combinedPlaces.find(place => place.place_id === placeId));
+
+    // Iterate through each campground
+    for (const campground of campgrounds) {
+      // Find all reviews for the current campground
+      const reviews = await Review.find({ campgroundId: campground.place_id });
+
+      // Calculate the average rating
+      const totalRating = reviews.reduce((sum, review) => sum + review.rating, 0);
+      const averageRating = reviews.length > 0 ? totalRating / reviews.length : 0;
+
+      // Update the current campground's rating
+      const filter = { place_id: campground.place_id };
+      const update = { $set: { rating: averageRating } };
+
+      
+      await Camp.updateOne(filter, update);
+      await Rvpark.updateOne(filter, update);
+      
+    }
+
+    return res.status(200).json({ message: 'Campground ratings updated successfully.' });
+  } catch (error) {
+    console.error('Error during update:', error);
+    return res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
 app.post('/getsavedcamps', async (req, res) => {
   try {
     const { username } = req.body;
