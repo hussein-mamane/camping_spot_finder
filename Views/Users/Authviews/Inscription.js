@@ -1,9 +1,10 @@
 import { Text,TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {styles} from '../../../Styles'
 import axios from 'axios'; 
 import {rootAddress} from '../../../constants'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { ComponentInputForForms} from'../../../Components/ComponentInputForForms'
 import { ComponentButton} from'../../../Components/ComponentButton'
@@ -13,6 +14,14 @@ import { ComponentTextInSignupLogin} from'../../../Components/ComponentTextInSig
 
 
 export default function Inscription(){
+
+  useEffect(() => {
+    const clearAsynchStorage = async () => {
+     await AsyncStorage.clear()
+    };
+  
+    clearAsynchStorage();
+  }, []);
 
   const navigation = useNavigation();
   const [fullName, setFullName] = useState('');
