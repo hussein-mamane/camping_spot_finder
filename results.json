@@ -1,0 +1,602 @@
+[
+  {
+    "place_id": "ChIJAX5PcMSwpw0RJr43kRwQyUk",
+    "name": "Camping Mimosa",
+    "location": {
+      "lat": 33.7268913,
+      "lng": -7.335790599999998
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFi_RlyLPn64w9TBMi4DUXlRG-TwJcf-KKHiLGCEi9BhKleQgooV9e8XQEb1XmtUaMPOhYjKvxbbxYNELLMvFwKa5q0IJeumPNBulAUN6-jed2VP4wNtHRF53oBD-GkdQ9PdSFwuL7W83SF_5tjvxSJKNLWyFsc45iyKIP4-S_r3PE2u"
+  },
+  {
+    "place_id": "ChIJA8D2T0qxpw0RgRmw4Jkg9fU",
+    "name": "Rabate benslimane",
+    "location": {
+      "lat": 33.69257109999999,
+      "lng": -7.3099163
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFiwzOsZqamvdmrh6B2MChdXJrzluPfP3uoz111NZ2sSkpJ5RuYJOtmyn7h5dgqpHbGSBbDngXJlKlqrnesjX5wGlt-vywrbd6OIJbLcHsovXfBSV9_QZ5wvDemkcs3I6BDz2ei7bDFGyNdmlbRAv8b28LcRNZkht7qXVGrx6heQpV0G"
+  },
+  {
+    "place_id": "ChIJv677pfeUCw0Rp1YK6CQfpOI",
+    "name": "Camping Echrigui",
+    "location": {
+      "lat": 35.47228620000001,
+      "lng": -6.027882399999999
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFgv1KBpa-Y7Mp3hSWvlYdC5cROMTbjIZFh4hm3KjVcWY78-v92F43lMukd3X1t-TEDqOpROOG4Xp1xvep8sm4F1C6qr6NdieW9Wmw8pDwuZx4v8YZ9F_foCwVldO0ttO9hQrkTDxMXgyio53m75-G3IAKhKpXgdLgk05E7lVorosS45"
+  },
+  {
+    "place_id": "ChIJyQ_E8wzboQ0RRMaxKu_HNGU",
+    "name": "Euro Camping Emirates Tourist Center Azrou Ifrane",
+    "location": {
+      "lat": 33.4433305,
+      "lng": -5.1898032
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFjZr70GParNPCM52_vxZ2HAR8k9vN_AGsAUHVJvzct7L0pwXCoBMEz99P0GnpBw5_MF9S4RactUcdBbxU7tluG9xWNDyLYueD3cWrYdGUJEU1YbGarnkdyhSYS8RMBJSgISQYLC1Vb-SaI1WB_yILnJHLrwCTqegprrRhHTGFU2QJam"
+  },
+  {
+    "place_id": "ChIJ4YgRBIkvCw0RGqMPtxdDhEw",
+    "name": "Camp El-Mfadal",
+    "location": {
+      "lat": 35.2385522,
+      "lng": -5.1786871
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFhhhWy-7FhPLCwROoUGaAhLpA1KllogpqQRZKQFEkGTucyMK6YhRaPYA20BNw6FlPv8c2WUet-96L6tXPi0QK_wCcp9KXqQ-y-tpS4O6KVQg29ho8iyl_RvGLVK8pquyMqhE1YxhiXjL0uxwCrhty1HSuYmyrSJ41qZNZDepAvjnPBY"
+  },
+  {
+    "place_id": "ChIJKTIkQJOwpw0Ra3cqkqnF5JM",
+    "name": "Camping L'Océan Bleu",
+    "location": {
+      "lat": 33.7376228,
+      "lng": -7.3236907
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFiKLj05BxT-RYkzgmnm3W27dSBVXIB1MDt8gzHKl_TNkZFItyBxBg0HC8rNPuxeHlC6IMWNEMjLl-EIzVPwgBcqJyOalt7ksOQHpUVxyMmrc3nWQVLxK7f973Ojf-cZkk-8rvrT4AGZsKDFWn3KNY1L_SMg12iWdcO_GcdhtjmS5eA"
+  },
+  {
+    "place_id": "ChIJp7ryWGH9pg0ROIGb2yu8JSQ",
+    "name": "Skyland ranch",
+    "location": {
+      "lat": 33.571686,
+      "lng": -6.940109000000001
+    },
+    "price_level": null,
+    "photo_reference": null
+  },
+  {
+    "place_id": "ChIJo_yFgkD6CQ0RniLwyV4AbzU",
+    "name": "Boukmour Plage Sauvage",
+    "location": {
+      "lat": 34.4832005,
+      "lng": -6.5169738
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFhpQw1YCvYODvm3Co9v9gsBYAu-MV6TtjEBA1FeUdtUAEXD3zpUOfHXGnHicNzWblphza2TCgh1cM6qs1wFElK8Yf6KEMVL4YDbJYl-sIw9nVMTNgXecEWh32MDyUa791LMExAJIwaq5-rLtkO_MkpgjLp5ZqaDIvWWt0rKNfuNmM1R"
+  },
+  {
+    "place_id": "ChIJDTziapJSsg0RaCIT3iOfpi8",
+    "name": "Camping Terre d'Ocean",
+    "location": {
+      "lat": 30.56354129999999,
+      "lng": -9.7417322
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFgbkdn58WSNCMSnUbKhkXcqjM7hnGZ-Lu72TDWzOpVccTjlQiCg9venBs9BrrCw0u7elggMtbX_Jey1u5qgtjDYLgmlE0VLJf5-RdhdJxzVazWzQOcW9ra-TH1KYMf9CmP8EHRifwMHpG4UdMPjJNf1B16BPsJGE1e7mXqW3guywX8I"
+  },
+  {
+    "place_id": "ChIJ51Kx62ImCw0RscspC2ydUlo",
+    "name": "Camping azilan",
+    "location": {
+      "lat": 35.1756364,
+      "lng": -5.2669364
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFi2FQ4K8k4Fb6CBUdCyH_FboOm9AJEuKjqmYuTNAd-HJI4fqyIOos0Zm_R9Nb7Ox-ZGt3Zm79EfamL-WrpV13u_3sVKykTnFoSA5IptfVbdl1gnsiJlG7MtZvdo0HXg9njl6mG0qFH3Cur-Xa89-famDlI1_x_BAx1bc9psh0lHE8jM"
+  },
+  {
+    "place_id": "ChIJ4RdOuTbtpA0Rq6v89MbJNWs",
+    "name": "Namaste Natur Camp",
+    "location": {
+      "lat": 31.9928706,
+      "lng": -6.7607338
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFidp4zXzOlzCfb6yy4PNxc0D7jltooaSTVPHDkxf6y7WenwDtD5WbPrGYrT26qqPkce8g68pFKabq2K-FQWezCC15C094k037u6fT5WO7ommZVzhgA7pWBoC8qJ3o5vLUGCo3Jw_9IC8kN4gYIkaAW4HFy10EfbbOC_xrycg-N9a7y-"
+  },
+  {
+    "place_id": "ChIJpQDD9dzprw0RuuJlBC1mkos",
+    "name": "Morocco Desert Camps & Desert Tours",
+    "location": {
+      "lat": 31.5545035,
+      "lng": -8.069934
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFhbYhpKkvgulFBVWul4dWx79-sZsN2a6el042H8dn7IAhbpmPZ0fi5KBt7EG6Uziv1DeYZkl-Rqn7P9yGO91bM5jYoFRswVC-cPlOpR8zcK5EypkZn7S1wuet0LqcCcn6PRyRFNJGXa0qI6vvqmSp56MzuzDyU7jl4hrhCeEDS34Ihp"
+  },
+  {
+    "place_id": "ChIJQ-5MoNuNpA0RzmsutVH-OB4",
+    "name": "Chez Mohamed Tafdna camping",
+    "location": {
+      "lat": 32.0161271,
+      "lng": -6.7220141
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFjV-IrvkOYisPrQzMXXw89Zdcm0XprHtbOVnGLiMc3lr02aYfWvaG3H-TnjVFbdAUpaYh0LIGUUSM5O9nMwRQaPtcCKuYZ9ZcT5Ax29qw2ZV_DoehNlF2bSdJxKEbI9W2nX57v_J159QPuSh_vpmNTlIoOyqSKgwVr9UIpy0WhV8cCd"
+  },
+  {
+    "place_id": "ChIJB2p-mL54DA0R_JnyCH2s80k",
+    "name": "Camping Miramonte",
+    "location": {
+      "lat": 35.7909297,
+      "lng": -5.8314433
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFiLqifMF2-0rMtGNRGKiRow9BKN3n0gqYy56jsnZgwSq_XeyOLFL46uHHukEHMFozoIsEIxLpYUMAfhnmx59d7aUoYCVIyiymYFvWehlLEVjRL87cBITGJxYX81xBf3HczQ5ieNtXl1ryvEmlMOVORmUMuM9jh9ChoKCKxT_ao3DdM"
+  },
+  {
+    "place_id": "ChIJA-cdN_0zpg0RSLp60ruQ0SU",
+    "name": "البوشتاوية مجاهد 396",
+    "location": {
+      "lat": 33.523722,
+      "lng": -7.5439942
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFiWuLVS7HjsdXZ2mZTZUa-ubT7HypDOhdKMapIXRufDdbmaEBgVwvnKfEerkzJ4wsp97j-WITQ_9sSY-n9LoL-cM7Tj4krch3qfacpSiuYU0U6Z7Be3UJKZMu9k4Dk_pEcGn45DqP_32oxTIgz15-5zPYLeSOvfupEP9SE5CtVbGqxb"
+  },
+  {
+    "place_id": "ChIJ-bA17bvboQ0RguwGiuk6Vd8",
+    "name": "Camping Amazigh",
+    "location": {
+      "lat": 33.44945550000001,
+      "lng": -5.1703548
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFhpVHH3c8dnZUGJqgNSonA-WPHUM2of4hJqjmcwd4oaUaWklCnMF5oGH5JWa_-kfQgoimYBju0EUlgQjd2Ha55jtRRzN-k1IeB7NEMalGjTgzKreJCOnDFtDaGA_azbiuHjDSRNG5P6xDGwbImxx5zWQ0v5mREmrhBE4TN41rFHiW66"
+  },
+  {
+    "place_id": "ChIJ-dR3bk2TrQ0RbJNMfieQZhI",
+    "name": "Camping des Oliviers",
+    "location": {
+      "lat": 31.5324066,
+      "lng": -9.5474524
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFiZEhZEJi1akBIS0xHmsNNDyJIN21wKrMAuvyFFZeW0hRK_Cdeu9S4Fd-9fw4Zt_ao8pHTpErZlrHHTngQzvi8jZdz_OnEJhlyH8wWF3G69dAmo8CW550yxrHB0oDzYp5DuQJ1Uv08PCCGiqNiX87A0NAQHT47gWcRSQbjnK8PrXpqn"
+  },
+  {
+    "place_id": "ChIJaaByY__fpA0RIG0oFaIMurI",
+    "name": "Rainbow Center, Sidi Daoud, Morocco",
+    "location": {
+      "lat": 31.791702,
+      "lng": -7.092619999999999
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFi6Ywg4cwa8rNHrZ5iYJo9qy3ghfxk5Eem7wkKjOuf8kiDXgVkAz0ICSwS98rPTCmOQpDco2l-rSha4N2SYCt7Hql8davKQaOiLGrxlalF3FIjr7MI7Ug6y5Z6b-cFhSeY1PVPL6pBlIfw2MznXaCmBSSPZGWhQCi08dcTJfX-tosCd"
+  },
+  {
+    "place_id": "ChIJoVHFBWWNpA0RhrXd9tBDRAI",
+    "name": "Camping / Auberge Zebra",
+    "location": {
+      "lat": 32.005928,
+      "lng": -6.719588
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFjmUdlp9L3qnkmUdDFPJPT1pHkiHSyEBpRTIE_JhjhWRLL9uRLJviouH9KMg8eHeIzTEUzGcI3vgM3N0ERsPlKXMIOUNhYjUPOa2jBgMIeEblIALQlYUqO5ZfWCs5LjOLGWNOW09y4jYpimlyN90MvljmAj0v8ZzrchDHPwsMQcuJHQ"
+  },
+  {
+    "place_id": "ChIJHRn-ecIRpw0RDRZ8LDxnyT8",
+    "name": "blad abou elwafaa",
+    "location": {
+      "lat": 33.8279092,
+      "lng": -6.9034735
+    },
+    "price_level": null,
+    "photo_reference": null
+  },
+  {
+    "place_id": "ChIJV8ae2Hxesg0R5y2J1sxG7OE",
+    "name": "Camping Imsouane",
+    "location": {
+      "lat": 30.8463109,
+      "lng": -9.8216302
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFjerOmo9SA5-7soWap376Bf1Mcl-Y0XHHsTihMWziERri4artoccLD10Jb3v-AMSd3afER684hfE2JubMZ7Voe1zI1O7Gdf_L3HWxVkqF77KHjA7sm26U8DKK1MDRddqbPpzUWQXrB6UVmlignH4fbKnwivQvklS0MRdM_9mwVjpzR7"
+  },
+  {
+    "place_id": "ChIJ8aVri9i2pw0RlC2KqfcMvkI",
+    "name": "Camping de la CNSS",
+    "location": {
+      "lat": 33.7095925,
+      "lng": -7.3654264
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFgrloG_E-NeQ7vtmJNSF8mUlPqXzhUVdu4swqHBbAzqk7guZmnvhIEplBu6-JB4kxExAlEUahZsTCzcnUraLNqOGpC5oylt59xTIFCs6c0u3mvgA_Wsmb8myL3j5JsCLNP3uxUPLe_3_OfCcFhiL0qIw44bgFAuDqQLc4GLzOF1500l"
+  },
+  {
+    "place_id": "ChIJP4AyZrq1pw0RSSZlxDeOqsw",
+    "name": "La famille ERRABI",
+    "location": {
+      "lat": 33.6447744,
+      "lng": -7.356051799999999
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFg4slgMTPzVGnaadutzwDFXSlN-Ou8r6g1dL6XreT1jr_UuxYnDm_I_GQWoYuQdPyjvipavB7tCtto-RXam8em88G1fcUyWOYR-ddlt9Zr_-4HWXzM4dxMCRoJvG26S-OItvh3WBW1WqJ7j7JHxiTGTJVxlXZ1xLQ6N_Jf-wT0rKJIu"
+  },
+  {
+    "place_id": "ChIJFffJtjA5lw0R2j6S3HUzTDc",
+    "name": "Morocco Deluxe Camp Assif n'Itrane",
+    "location": {
+      "lat": 31.1593046,
+      "lng": -3.9395466
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFhf5K8GTmE3DWjOBXdNlItXdh64l8zx_f4BRg0slQXPgLIFNfUL76YFsNq4V8niNcDqrRQGiw9z5Zxp2tx-qzWXqybMKAUxRv6G0QE9Yw9tWWxA9JYLZskO6__BTJxPlcUJ-yOL3CDeXRptieD0YcDFg_OJxl3Sgkxud611M3StLGa4"
+  },
+  {
+    "place_id": "ChIJp2DFWLjddA0RK5zKjgrjKx4",
+    "name": "TAGHASSA CAMP",
+    "location": {
+      "lat": 35.2242033,
+      "lng": -4.7397254
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFhM73G5hqGqomSNXCjtP9OQt_LqCFwffk1wVjtpabNkKgKF4kcZ9vNipEIPammPBdryVwcuBIVlhBwgHN73ePD0dPyBlT2qefSdZ0WDGxR8n1TF98xx9Qr34Di13euL1TopfWnz94tX-mWG5sY5HaWrE5LfnqoHhYfoSFtOR_V3BAYD"
+  },
+  {
+    "place_id": "ChIJ0Yxsci0xpg0RZH9GT_2_yGk",
+    "name": "Bou 3ogda",
+    "location": {
+      "lat": 33.448823,
+      "lng": -7.547606000000001
+    },
+    "price_level": null,
+    "photo_reference": null
+  },
+  {
+    "place_id": "ChIJU6Fv_UI2lw0Re-95BNkzl1Q",
+    "name": "Sahara Desert Camping - Morocco - Erg Chebbi - Merzouga",
+    "location": {
+      "lat": 31.1732753,
+      "lng": -3.8476714
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFhm8WMA2NSUcSyEdgH8tY9OTiqxM5LbmF3HH39JtZ9AEnvNTm_MQCv5aoqDtA-_LvsCqs5ZFsjyyE6mFH4OsSTiOZAOrAiF30a-uCzBsP22BcyhgMdRL_0UVee4G2b4E_YaDijsMeJCx357exbdE6DzQVWtPuvHXuqQ-iPaZ-xA_pln"
+  },
+  {
+    "place_id": "ChIJ3Yn6ggAvCw0R4MQCIkcZk0g",
+    "name": "Beldia Eco Camping",
+    "location": {
+      "lat": 35.2647385,
+      "lng": -5.2243303
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFitLwh4jxw7gwYQ1D7B2kFWksZeSLQSRM0zAJg0ArOtBL3Kxb7u5U3hvb5Y60GqE8_HvvW19qB6NzadCUZKU8miQigNhcwHT-J3nCoMq9IXtSzaQX7VCHBYsOvDp5XFcls4EuzxgIMQPUnNWqcaStuWjVI-ACy0DXWFy-hiQ42bKvU7"
+  },
+  {
+    "place_id": "ChIJ8YzHIj6lvg0R45TjbzMyu-g",
+    "name": "Nomad Camp",
+    "location": {
+      "lat": 29.8506053,
+      "lng": -6.2124636
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFjuKWha6aaVIddUyShWzMB_FnNprY5lUdK_nSur7ksfWYJqTRoYX3Croazr0Qo74Cm1EfwbyE7qceNi2plIrZ5Yau9LQEXJ9KTK-nLI11fRfYV0a2bhoqIAaJVEVafdw9OZwa07jC9eiSyueYnI6BxPGMG7DHLH1nDOEzm3K8DFRSDj"
+  },
+  {
+    "place_id": "ChIJx6ykyZ28vg0RNge7kBieBzM",
+    "name": "Erg Chigaga Luxury Desert Camp (Nick & Bobo's)",
+    "location": {
+      "lat": 29.8056293,
+      "lng": -6.153352
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFgDKLD-TsZPO5FstGK1Lu9bIt5lelNrPJ8xf9rCraARM5F-PCSq2IQ3lxutmYlWXYkhPiyLlN_-QRV97Lt7IvP5nXQ_84Vf9_Sbvy20LcJ4PFIA2X5Jw4ugFSB9R3SeE9I6X3fag9mHiU3Y9Zf-56Usr-HY2AgrDt6pzATIcj5YOPSg"
+  },
+  {
+    "place_id": "ChIJyZuxnVbOdA0R9x0tZSfSVBM",
+    "name": "Camping Chmâla",
+    "location": {
+      "lat": 35.3300361,
+      "lng": -4.9404248
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFiiIMBDJazarD2xsYGxPvQn5lfKhhDDU6oYY6nIA9Fq3IiK2BdkUu8PFBBONo3Sb-rid8L97QT4NF4w7tgocYkIe8Yhxt41B9gwg0sfDdVlhSHZOeXGIOFiSDdPWeuAho_8_s6HLzpR3E5HhCaxoD8rO5ngyJpYRsKxRiHTclSWDfJo"
+  },
+  {
+    "place_id": "ChIJ6xUvcBXtrw0RNDNGzA593Bg",
+    "name": "Camping El ferdaous",
+    "location": {
+      "lat": 31.7191875,
+      "lng": -7.983187500000001
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFjNv9CE8CBS4WNd3nshYxYmmcHJqDqOHgtzmMvSo-eL1s9W2HpOuQ2r3DNcdeLKkDBuK1R3DcnYZsgLnfKPxqoYxllRzHAsoebJtJvK4CpZkNtJrybbkV-1x44xn4MJcUQ0OXUtB7bAXmr4QJzYxNeRoOI0LwdxSDWKhYb1RO7nTRbG"
+  },
+  {
+    "place_id": "ChIJR0-DzWcXsA0R6xDbxzHTwPQ",
+    "name": "Eco Camp Morocco",
+    "location": {
+      "lat": 31.1710451,
+      "lng": -8.0561217
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFgiWOLeTfioJiO7m1sRP8YPqcIZtA70RQEd6ZmHtuDkQk6ycQfNJfdtORtJXhfDKlKx33Zn0egKEI-zp7S2d3RyF_KgdgRHZ7Mr_zJFXdgXMT6TupfuaGPBOQqRwGLrDCSDUhQTXkeZ6fbdSoxutw5rHJMh94AeXyzF1WtVtt_w9h3A"
+  },
+  {
+    "place_id": "ChIJT1u44qr9rw0RvXEEIKusLw4",
+    "name": "Fermette",
+    "location": {
+      "lat": 31.3924831,
+      "lng": -7.953816400000001
+    },
+    "price_level": null,
+    "photo_reference": null
+  },
+  {
+    "place_id": "ChIJvX0Sv6mJvg0R1hGq-LE4D8Q",
+    "name": "Camping La Boussole du Sahara",
+    "location": {
+      "lat": 29.828566,
+      "lng": -5.732671
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFiDiLjx74Ykt6BOvq0zisbqQDUOo0yHgBqX81SPOYK63vdPZExEQ_mXLv4bXfCmobpZD-jltvoUJWsHHYC89l9tlbESkZU0wbrJh9CWeKBht5yEsNFHl-0HHiJ5jIJ6hyLg-WCQzY_-ZAyRYCEPoZTd-7-FFI7Op_NYLzgvywY5qan3"
+  },
+  {
+    "place_id": "ChIJA9spFD2OrQ0RpEGIOSLjWhU",
+    "name": "Camping & Hotel le Calme",
+    "location": {
+      "lat": 31.432566,
+      "lng": -9.658147999999999
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFigPb3NyYsh5NTXg-fODMcKQlUtQNk9mK4eAeU73ZQjOMCp3W5MKNFBUW3rzCliXWPCM6fCxysng1nEpkEKUJ450EO1viz1BJrllevTEIT1fA3KMWa9egJc3mR06498J9-Odr41hg1cOI0zEp_Wo-reKBGIxe4SN40NIBkbLa_by8D4"
+  },
+  {
+    "place_id": "ChIJjRQrMO5Bpw0RL7NF7Lyiato",
+    "name": "Centre National de scoutisme Abdelkrim El Felous",
+    "location": {
+      "lat": 34.0318383,
+      "lng": -6.723915
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFgRM49wxtBsXk-naTDZk4LN_oxgRS_BQqEZ_OEPmJWfS1ma6AEnTeVJH59R__Jzjlc701jHv6Q07t1h8eH-CEswahsbCzjMhb-jN-LYyjoGj_zTs7PZ4EpHtKpHe_m1q3w1xJghQ8lJa2VL6yguJ-i0Ip81zIfHCaAMMw-hG08McGEm"
+  },
+  {
+    "place_id": "ChIJdX8UvRI3vA0Rqv_764jGPYg",
+    "name": "Sahara Relax Camps",
+    "location": {
+      "lat": 30.336469,
+      "lng": -5.8394239
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFjfYu-i5BJd687bz2Cmcu784mnMMwXJ6rl4wXcf4Czl_Bt4pAJB51c_pmEYPQzLOWS1-gBP8CVJMnNd-eV9e6PmdlkPm-lRXfWyekUA_TtgUbCthV8jV1Eiw1omwm0Hx8wSrO_3LaM0L4zZMympdDrj8QBMjoD6oai47dpelYA-eVe5"
+  },
+  {
+    "place_id": "ChIJDZHFznbhug0R0ZzQkvGpwbM",
+    "name": "Camping Atlas View",
+    "location": {
+      "lat": 31.0143908,
+      "lng": -7.1037592
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFje9JxybgtF_398vp0jlNf6fEDeaTPpwA_oeEizIQeRVI7kUFsUFTXRRZWrDZrPHidXmy29Y_V6VbTJ-zdhbR_1XI6PSO-sDxvAD0GORAvVoDbMKINGC9K0uNkPJp6uDypFGCC3GDs00d-xH4lkTq5-YeGHyJpJp5fiz6iWLExV44xe"
+  },
+  {
+    "place_id": "ChIJIwEBVg6Jrw0RrjNlNY9cA5A",
+    "name": "La casa de othmane",
+    "location": {
+      "lat": 31.9230945,
+      "lng": -7.828444800000001
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFjMr4xAbHx61Gea1TjUK20ieKmyh89qlDv9XC2mVO4PmHd32NQns_ii9OmKjr4VBb2HCx-dlePjg15nlYxh0CKrdOyxAlbIEnuVho8XGWnGmspBR3Bn5G3SSrd4MSH-mn3K91N9r0R2LaTJxINUYXoClqiwcoV_sph66FrU6Estkqmb"
+  },
+  {
+    "place_id": "ChIJuVmSv7cTpw0RpcBv78ZhAX8",
+    "name": "نجاة",
+    "location": {
+      "lat": 33.9229678,
+      "lng": -6.904144199999999
+    },
+    "price_level": null,
+    "photo_reference": null
+  },
+  {
+    "place_id": "ChIJs1R-0zHhug0RMSdKGcbfHrA",
+    "name": "Camping Zaytoune",
+    "location": {
+      "lat": 31.0467113,
+      "lng": -7.1345969
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFidqUjUOfSNn9I9SRNMo7ukrz2gjrksKlQ_Gf6NPk3KxuBH2sTHQXhHJrZciCdSDlCKQsjV9I4yROSRFNK0Lz6XJ5o7FXYyLo3Kqiigmjfhf9AW23yAXELvh2RPXwmx3YA0wzbxe5fxIoTSmOgK5F1NawBwPj8JEIyjYznsH9KkCOwM"
+  },
+  {
+    "place_id": "ChIJHXdirRuUrQ0RY7K1JKp39tY",
+    "name": "Camping Esprit Nature",
+    "location": {
+      "lat": 31.5531851,
+      "lng": -9.6260216
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFibJUvJA8rJyW4F_WGI_JnynOhgEhevILSu5uf7eejydi0FCsQWhmq3gUERkhxhQUEblhSuXV17AanE1cB5GJ_fHu2Tyxsuaeg2mvx4uvYv5EutcmQL3mMq1TGwcFZHFZY8xqUV8o6AJvR7fR9JgyO9YkKZLvAmTVOwfvah1OsZaALN"
+  },
+  {
+    "place_id": "ChIJoVR7t4krdQ0RlDPkJY_sw5A",
+    "name": "el habacha°chefchaouen°morocco",
+    "location": {
+      "lat": 35.0987845,
+      "lng": -5.0578653
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFhk4VuS6ksCPlMeb0RvD6BN0mUzFJYYsMJa2Tet4og47DprBsfM8iKuXlQPf_KClgNMOCVJPlIqHAxXJB82u8IzHFOB6Qfzs3Ueqd-QfLMzUCwD9tshXGNW3eXh7uQwxrzLHL8ZU1mogOX_Xrg7_bUBNZVmSwDEFYwxAYXE8YBciPWx"
+  },
+  {
+    "place_id": "ChIJF7CYALXXtA0RzgRzU1MoOhw",
+    "name": "Camp Del diablo",
+    "location": {
+      "lat": 29.0938315,
+      "lng": -10.4410055
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFhFoTKSletR0QLKy2v3m__VDs5uOMzgO1Yad2aRuKQwH8Pz8sfpvrM6vXH6QEvOKbDsAEKa5YrKuqpvOwzQEAfWecr2KQ-_M03lfYB9JHewBNG41XG0iOA7APKUEAYQ_v0jE7_vOKbML4SLgjSUshz1PVcjyzEIsmeYzbRP-lENcGF8"
+  },
+  {
+    "place_id": "ChIJN2jWnphivg0Re-WHVH0vWB0",
+    "name": "Camp Al Koutban",
+    "location": {
+      "lat": 29.8566924,
+      "lng": -6.2268041
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFiWjM7-t852WeV8HJfjEoqKjgq5RU6L7UitV0LVOaiRiqEf-ciD433sI61kBEEE3Ej2LsV74xlXWMvi-KbxDC0TTA-1dHf1g6pZiMGx2fZd3C1TBlFzfwQuUjx9Np6t9MhJa9vfinluFL3IS-NqF6fLQSXnOX2Myz3-zopNIKOt2hEQ"
+  },
+  {
+    "place_id": "ChIJib2oWr8Bpw0RhN9Vk-SZHiM",
+    "name": "BEN'S Place",
+    "location": {
+      "lat": 33.6435288,
+      "lng": -7.087696999999999
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFhVsrSDssUzIjnXSc_UvUd52Gsi_FyFlxFrHW0Qjy8Xav0PUjcpAgkjJXpKWHa-NV443Bqp9p1giZb_gDAbmN3jGWbb-76jo8Z6fvuniSqW636fOeJvCTumbQyUe7_7UMRiMtHWGsLSa5zuhQUxfPr1Lw8sK9kNTzhYVbAN6aWrh5ve"
+  },
+  {
+    "place_id": "ChIJXXXmFG_prw0R4kaXAXAhH3o",
+    "name": "Desert Luxury Camp Office Merzouga and Erg Chigaga camp",
+    "location": {
+      "lat": 31.633089,
+      "lng": -8.004237999999999
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFiVpdUWxTbZeeIlENJCPWmj7QVOyWX2GdhMNRqW_UF463WddG8JZJUvuGSnAqQ6nFiNQEaiBm0QKKgxU77YW1MKztuIyHVA1o-L9a5NNhW5XCO7XwaSurvjalSj8_6rfEbS9jVtfjqvzVTdbvJydTrPHubP7kjxat6JTImiT10UicJ9"
+  },
+  {
+    "place_id": "ChIJgwuQVr71pA0R87TWxYPP77o",
+    "name": "Camping parking LA NATURE",
+    "location": {
+      "lat": 32.150403,
+      "lng": -6.7759228
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFiCFYhOKQAocs167i_Y0WCFXiVE_4V59GaiCGh-EBVnHT0k62GYJRvl7lpKHfexFHeNHQdVXFEH2rtqXGW23rcBlRydin7Ss5yws9ajvHpEsafdYPQMYu0ZmcLtlvn4Tl-gcRVsReieok79PxaIRmWLCbozGNmijpYOq1J_qGBSIdKG"
+  },
+  {
+    "place_id": "ChIJcUid6Ie0sw0RYM8IneSzAbE",
+    "name": "Camping Aourir",
+    "location": {
+      "lat": 30.4947532,
+      "lng": -9.6231923
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFjRfmirCZ_OhuZWlNoMhVdpicHxduQAGKaVrG9PHlntiykO1hzjFlYO0VjMUN_vRKcE5fLB2UTQrmggx-P5J7KMW8fzk7EVsPk9pkJ4lXghOnWXw7aaty6mMfD5XE8exoX28K6dBzYDOG8hSgSE3Z11jc2wozYLI4TS_X0YrYPAqfdK"
+  },
+  {
+    "place_id": "ChIJ62LDeCM8lw0RfIf0zY1WlX4",
+    "name": "Merzouga Camp",
+    "location": {
+      "lat": 31.1413696,
+      "lng": -4.025683
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFhmWjnsUaAPj5vUXswePb2MRS6MmxjxKk7yOGVaXtxU7-ZG99a9oRBeMq3cCZiQRAZx3LpoEPjd6kau1xcaPsUCzUVK2yN2PF_GjZvvm-ObYxWjejXdvuVDIdbHXgIGERZt56zqqodtLCu4tr7f9tfH2avZzARiqsLSvcJ-YxBVvjH3"
+  },
+  {
+    "place_id": "ChIJ1cDeMEK9Cw0R8N0Ji4QfxIs",
+    "name": "CAMP DAVID",
+    "location": {
+      "lat": 35.3709371,
+      "lng": -5.969978999999999
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFjZcmz9lhrrH-T11FR7iD6hotAtcCRlHkNCtxKeJ27bhCS2ZqI5X2S1rNXhF8ERyqUg1werULFwc970i4GBjZ-ndv4Vhey2bR2ppFReNgU6yV7QUNs5-7aTBRuIgK1ORQbtyTbPbnY38Qm1bVy44hIYOG_EIkglAJ10IBqadlUcEBzf"
+  },
+  {
+    "place_id": "ChIJCcYBdSs7lw0RKnizmk9qL54",
+    "name": "Layali Desert Camp",
+    "location": {
+      "lat": 31.09008159999999,
+      "lng": -3.964557
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFgZqPfotaj82OBspRRM5zoLnGMDTAzUp11BtBOD6Cxf9g1VOqV_ie2IWSIKVseelPRguhJt62VHJ-pnuzAqaU1WAGsaDOsvR8WxIw7atqYCpM5lqvXWbRwPPEkCbUJNsiEAkyEyBsg0US8kW6gpcmk8wE0l-S2CcQjm0RaW-THdYOqA"
+  },
+  {
+    "place_id": "ChIJcYZzZChfsg0RwBrHLotI0gE",
+    "name": "Ocean Point",
+    "location": {
+      "lat": 30.8456999,
+      "lng": -9.8221214
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFh-314n-x5JE8eJHJTmdXaPhsx-lXj9sodT7PCNx_NeijnKCtYmsGc78WsZBB9AH2AvM6s9JzDvZjXFpe2jT6jENTKVyDfhuI-uELW0c7udjoIG1Vqs7shXbPrFKeRNjkMXYlJt47_GaPlAobgQshiH3ZoWwsHHHifmQ9_lxh9gCcdg"
+  },
+  {
+    "place_id": "ChIJi4ifCzhVdA0RI6RmebgyZl4",
+    "name": "Camping Amis de Cala Iris",
+    "location": {
+      "lat": 35.149168,
+      "lng": -4.376916
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFgxgkpa0ObCxvI-oL-svePJzenfK2YXTThfzfnlF3gReFKwCyexnf6tVFvbDcODBlBQ1_UQ6xPO9gi6dwMmubZnXlmk1PXPW4vZJjqtiZiuPMVKYxFx6R2hy4olcP1Jlt1_2rZE7PE4q7eec_Bnvrdg6jal-_g-tSPth_thQ3ZW_t3B"
+  },
+  {
+    "place_id": "ChIJXdM0qTfvrw0RBMwc4KTTLY4",
+    "name": "Beldi camp",
+    "location": {
+      "lat": 31.6410739,
+      "lng": -8.0018318
+    },
+    "price_level": null,
+    "photo_reference": null
+  },
+  {
+    "place_id": "ChIJ4ezYnTVtpw0Rijgr6s3C5dA",
+    "name": "VIENS & VOIS - ESPACE VERT AU BORD DE L'OCÉAN ATLANTIQUE RABAT",
+    "location": {
+      "lat": 34.0222723,
+      "lng": -6.8534896
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFj9UHKg6ZFm6n4-CW-Yanu2-uLbUF0DPhzLt84sCSHO0yKaFSFETTunMfIuzG4pvbRGm4USueWifwTIijXKWlm-via-CNYgveSWGowOBUADh852b60oZMpMK_68TlIGHkCuSgChXML49uP2l-WU2AIOGRFLvCyiWoJCEFF8PFlwlrpU"
+  },
+  {
+    "place_id": "ChIJX82MEZPtrw0RqBd_u_iM9d8",
+    "name": "Village De SGMA",
+    "location": {
+      "lat": 31.6772857,
+      "lng": -7.973902
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFgdzIANS3uOO1mSAa-c2uOIXpRUknSMtUCBBHCANmbgDwOAp5OQ8wRPyo0xzoh6_Rv2H3DEVeca8BQqbuAXTGxedsjIGnoLdXlRoJ_Ilq2SNeMyOB1SaISM9K2NqbuYPQ2ujqWrVX8fUcQB89QM76Wdjdh5ZKAqxb600oMRyVFxaOWP"
+  },
+  {
+    "place_id": "ChIJ9U8v-FeLnw0R9R2IqjVrp2c",
+    "name": "Sahara Magic luxury camp",
+    "location": {
+      "lat": 34.0057207,
+      "lng": -5.010370399999999
+    },
+    "price_level": null,
+    "photo_reference": null
+  },
+  {
+    "place_id": "ChIJV40FmtU_lw0RHRY1xT8C3-c",
+    "name": "Tiziri Camp - Luxury ECO Desert Camp Merzouga",
+    "location": {
+      "lat": 31.114611,
+      "lng": -4.0084218
+    },
+    "price_level": null,
+    "photo_reference": "AWU5eFg4gXWI7P8zy3tYFPMlr7InYFWv6bNjRbFGBCgOe5lEIwm-oXp3QT2Y34Q4lSeYQqWGT7htUPWgqUnk5rQ3ayr4xrGgio6gYIf4T38h03aKBwfr72slWhRwA7hO8JLO2nqt5gfAZpfQAT3q-nDO94_hZIByyZAP9_ntoO0FsH6GC5o3"
+  }
+]
