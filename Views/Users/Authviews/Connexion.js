@@ -1,4 +1,4 @@
-import { Text,TouchableOpacity } from 'react-native';
+import { Text,TouchableOpacity,Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import React,{useEffect, useState} from 'react';
 import {styles} from '../../../Styles'

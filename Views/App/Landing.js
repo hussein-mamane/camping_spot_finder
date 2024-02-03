@@ -126,8 +126,7 @@ export default function Landing(){
 
 
 <BigImage source={require('../../assets/img_camp.png')}></BigImage>
-{/* <ComponentTextInSignupLogin>Did you know that going in nature help you recharging your batteries</ComponentTextInSignupLogin> */}
-    </View>
+  </View>
     
     )
 }

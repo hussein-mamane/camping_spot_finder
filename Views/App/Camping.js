@@ -8,7 +8,7 @@ const CampgroundMap = ({ route, navigation }) => {
   const [selectedCampground, setSelectedCampground] = useState(null);
 
   const handleMarkerPress = (campground) => {
-    // Handle marker press, set current campground to clicked one
+    //set current campground to clicked one
     setSelectedCampground(campground);
   };
 
